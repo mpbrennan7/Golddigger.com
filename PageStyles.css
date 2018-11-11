@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p,tr {
+    font-family: verdana;
+    font-size: 20px;
+}
+
+td,input,button{
+    font-family: verdana;
+    font-size: 20px;
+}
