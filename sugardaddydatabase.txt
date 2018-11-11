@@ -9,3 +9,8 @@ phoneNum INTEGER(10),
 type VARCHAR(50),
 PRIMARY KEY(email))
 ENGINE=INNODB;
+
+-- connection string is golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com
+-- username is: root
+-- password is: password
+
