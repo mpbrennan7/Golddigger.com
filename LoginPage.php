@@ -8,7 +8,7 @@
 <html>
 <head>
   <title>Brian's Light Bulb Shop - Order Results</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="PageStyles.css">
 </head>
 <body>
 <h1>Brian's Light Bulb Shop</h1>

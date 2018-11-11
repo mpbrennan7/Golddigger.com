@@ -8,7 +8,7 @@
 <html>
 <head>
   <title>Creating Account</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="PageStyles.css">
 </head>
 <body>
 <h1>Creating Account</h1>
