@@ -10,6 +10,26 @@ type VARCHAR(50),
 PRIMARY KEY(email))
 ENGINE=INNODB;
 
+ALTER TABLE `golddigger`.`Users` 
+ADD COLUMN `numCars` INT(2) NULL DEFAULT NULL AFTER `type`,
+ADD COLUMN `hairColor` VARCHAR(45) NULL DEFAULT NULL AFTER `numCars`,
+ADD COLUMN `eyeColor` VARCHAR(45) NULL DEFAULT NULL AFTER `hairColor`,
+ADD COLUMN `height` INT(3) NULL DEFAULT NULL AFTER `eyeColor`,
+ADD COLUMN `catOrDog` TINYINT NULL DEFAULT 1 AFTER `height`,
+ADD COLUMN `religious` TINYINT NULL DEFAULT 1 AFTER `catOrDog`,
+ADD COLUMN `ruralOrUrban` TINYINT NULL DEFAULT NULL AFTER `religious`,
+ADD COLUMN `cook` TINYINT NULL DEFAULT NULL AFTER `ruralOrUrban`,
+ADD COLUMN `beachOrSki` TINYINT NULL DEFAULT NULL AFTER `cook`,
+ADD COLUMN `introvertOrExtrovert` TINYINT NULL DEFAULT NULL AFTER `beachOrSki`,
+ADD COLUMN `genre` VARCHAR(45) NULL DEFAULT NULL AFTER `introvertOrExtrovert`,
+ADD COLUMN `relationshipStatus` VARCHAR(45) NULL DEFAULT NULL AFTER `genre`,
+ADD COLUMN `aboutYourself` VARCHAR(280) NULL DEFAULT NULL AFTER `relationshipStatus`,
+ADD COLUMN `horoscope` VARCHAR(45) NULL DEFAULT NULL AFTER `aboutYourself`,
+ADD COLUMN `lookingFor` VARCHAR(280) NULL DEFAULT NULL AFTER `horoscope`,
+ADD COLUMN `favoriteCereal` VARCHAR(45) NULL DEFAULT NULL AFTER `lookingFor`,
+ADD COLUMN `shoeSize` INT(2) NULL DEFAULT NULL AFTER `favoriteCereal`;
+
+
 -- connection string is golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com
 -- username is: root
 -- password is: password
