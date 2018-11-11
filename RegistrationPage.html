@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Forms</title>
+	</head>
+	<body>
+		<h1>Please fill out the information below</h1>
+		<form action="http://www.SugarDaddy.com/registration.php" method = "post"
+			<fieldset> 
+				<legend>
+				Your Details:
+				</legend>
+				<label>Name:<br />
+				<input type= "text" name= "FullName" size = "30" maxlength = "100" required="required">
+				<br />
+				<label>Email:<br />
+				<input type="email" name="email" size ="30" maxlength="100" required="required">
+				</label>
+				<br />
+				<label>Phone Number: <br />
+				<input type="text" name="PhoneNumber" size ="30" maxlength="100" required="required">
+				</label>
+				<br />
+				<label>Age: <br />
+				<input type="text" name="Age" size="30" maxlength="100" required="required">
+				</label>
+				<br />
+			</fieldset>
+			<p>Which type of user are you?</p>
+			<select name="UserType">
+				<option value="SugarDaddy">Sugar Daddy</option>
+				<option value="Cougar">Cougar</option>
+				<option value="GoldDiggerMale">Gold Digger Male</option>
+				<option value="GoldDiggerFemale">Gold Digger Female</option>
+			</select>
+			<br />
+			<br />
+			<label>Zip Code:<br />
+			<input type="text" name="Zip" size="30" maxlength="100" required="required">
+			</label>
+			<br />
+			
+		</form>
+	</body>
+</html>
