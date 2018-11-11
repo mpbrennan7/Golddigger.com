@@ -37,6 +37,6 @@
 		
 	
 	$conn->close();
-	header('Location: login.html');
+	header('Location: LoginPage.html');
 
 ?>
