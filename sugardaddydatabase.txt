@@ -1,0 +1,11 @@
+CREATE TABLE Users(
+name VARCHAR(50),
+pword VARCHAR(500),
+age INTEGER(3),
+email VARCHAR(50),
+zip INTEGER(6),
+income INTEGER(1),
+phoneNum INTEGER(10),
+type VARCHAR(50),
+PRIMARY KEY(email))
+ENGINE=INNODB;
