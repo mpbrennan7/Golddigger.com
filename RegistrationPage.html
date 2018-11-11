@@ -5,32 +5,78 @@
 	</head>
 	<body>
 		<h1>Please fill out the information below</h1>
-		<form action="http://www.SugarDaddy.com/registration.php" method = "post"
+		<form action="http://www.SugarDaddy.com/registration.php" method = "post">
+			
+			<table border="0">
+				<tr>
+					<td width="150"></td>
+					<td width="150" bgcolor="gray";>New Account Credentials</td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+				</tr>
+				<tr>
+					<td>Phone Number</td>
+					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+				</tr>
+				<tr>
+					<td>Zip Code</td>
+					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+				</tr>
+			
+			<!--
 			<fieldset> 
 				<legend>
 				Your Details:
+				
+				
+				
+				
+				<!--
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="Create Account"/></td>
+				</tr>
+				</table>
+				
+				<!--
 				</legend>
-				<label>Name:<br />
+				<label>Name: 
 				<input type= "text" name= "FullName" size = "30" maxlength = "100" required="required">
 				</label>
 				<br />
-				<label>Password
+				<label>Password: 
 				<input type="text" name="Password" size="30" maxlength="100" required="required">
 				</label>
 				<br />
-				<label>Email:<br />
+				<label>Email: 
 				<input type="email" name="Email" size ="30" maxlength="100" required="required">
 				</label>
 				<br />
-				<label>Phone Number: <br />
+				<label>Phone Number: 
 				<input type="text" name="PhoneNumber" size ="30" maxlength="100" required="required">
 				</label>
 				<br />
-				<label>Age: <br />
+				<label>Age: 
 				<input type="text" name="Age" size="30" maxlength="100" required="required">
 				</label>
 				<br />
 			</fieldset>
+			
+			-->
+			
 			<p>Which type of user are you?</p>
 			<select name="UserType">
 				<option value="SugarDaddy">Sugar Daddy</option>
@@ -40,7 +86,7 @@
 			</select>
 			<br />
 			<br />
-			<label>Zip Code:<br />
+			<label>Zip Code: 
 			<input type="text" name="Zip" size="30" maxlength="100" required="required">
 			</label>
 			<br />
@@ -52,7 +98,7 @@
 			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
 			<br />
 			<br />
-			<input type="submit" name="submit" value="submit"/>
+			<input type="submit" name="Submit" value="Submit"/>
 		</form>
 		
 	</body>
