@@ -1,9 +1,9 @@
 <?php
-  session_start();
+  //session_start();
   // create short variable names
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $_SESSION['username'] = $username;
+  //$username = $_POST['username'];
+  //$password = $_POST['password'];
+  //$_SESSION['username'] = $username;
 ?>
 <html>
 <head>
@@ -24,10 +24,10 @@
 	}
 	}
 
-	$dbhost = "localhost";
+	$dbhost = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
 	$dbuser = "root";
-	$dbpass = "root";
-	$db = "practice";
+	$dbpass = "password";
+	$db = "golddigger";
 	
 	$user = '';
 	$passwd = "";
@@ -70,8 +70,8 @@
 		}
 	} else {
 		echo "<p>The account and password credentials do not match!  Returning back to login screen in 5 seconds.</p>";
-		header('Refresh: 5; URL=login.html');
-		exit;
+		//header('Refresh: 5; URL=login.html');
+		//exit;
 	}
 		
 	//echo $passhash.'<br/>';
@@ -83,7 +83,7 @@
 		
 		session_start();
 		$_SESSION['username'] = $username;
-		header('Location: orderform.php');
+		//header('Location: orderform.php');
 		
 		
 		//echo "<script> location.href='orderform.html'; </script>";
@@ -91,8 +91,8 @@
 	else{
 		//echo 'Invalid';
 		echo "<p>The account and password credentials do not match!  Returning back to login screen in 5 seconds.</p>";
-		header('Refresh: 5; URL=login.html');
-		exit;
+		//header('Refresh: 5; URL=login.html');
+		//exit;
 	}
 		
 	if ($i != count($user_array) - 1){

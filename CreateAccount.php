@@ -14,10 +14,10 @@
 <h1>Creating Account</h1>
 <?php
 
-	$dbhost = "localhost";
+	$dbhost = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
 	$dbuser = "root";
-	$dbpass = "root";
-	$db = "practice";
+	$dbpass = "password";
+	$db = "golddigger";
 	
 	$user = '';
 	$passwd = "";
@@ -37,6 +37,6 @@
 		
 	
 	$conn->close();
-	header('Location: LoginPage.html');
+	//header('Location: LoginPage.html');
 
 ?>
