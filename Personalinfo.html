@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Personal Information</title>
+	</head>
+	<body>
+	<h1>Please fill out the information below to ensure you meet someone who is mostly like you</h1>
+		<form action="http://www.SugarDaddy.com/registration.php" method = "post"
+			<fieldset> 
+				<legend>
+				Personal information:
+				</legend>
+				<label>Number of cars you own:
+				<input type= "text" name= "numCars" size = "30" maxlength = "100" required="required">
+				</label>
+				<br />
+				<label>Hair Color
+				<input type="text" name="hairColor" size="30" maxlength="100" required="required">
+				</label>
+				<br />
+				<label>Eye Color:<br />
+				<input type="text" name="eyeColor" size ="30" maxlength="100" required="required">
+				</label>
+				<br />
+				<label>Height: <br />
+				<input type="text" name="PhoneNumber" size ="30" maxlength="3" required="required">
+				</label>
+				<br />
+			</fieldset>
+		<p>Are you a cat or dog person?</p>
+			<input type="radio" name="catOrDog" value="cat" checked = "checked"/>Cat(Secretly dog)
+			<input type="radio" name="catOrDog" value="dog" /> Dog
+			<br />
+		<p>Are you religious?</p>
+			<input type="radio" name="religious" value="no" checked = "checked"/>No
+			<input type="radio" name="religious" value="yes" /> Yes
+			<br />
+		<p>Do you prefer to live in rural or urban areas?</p>
+			<input type="radio" name="ruralOrUrban" value="Rural" checked = "checked"/>Rural
+			<input type="radio" name="ruralOrUrban" value="Urban" /> Urban
+			<br />
+		<p>Can you cook?</p>
+			<input type="radio" name="cook" value="Rural" checked = "checked"/>Yes
+			<input type="radio" name="cook" value="Urban" /> No
+			<br />
+		<p>What is your prefered vacation spot?</p>
+			<input type="radio" name="beachOrSki" value="beach" checked = "checked"/>Beach
+			<input type="radio" name="beachOrSki" value="ski" /> Ski-Resort
+			<br />
+		<p>Are you an introvert or extrovert?</p>
+			<input type="radio" name="introvertOrExtrovert" value="Extrovert" checked = "checked"/>Introvert
+			<input type="radio" name="introvertOrExtrovert" value="Introvert" /> Extrovert
+			<br />
+		<p>Favorite genre of music:</p>
+			<input type="radio" name="genre" value="Hip-Hop" checked = "checked"/>Hip-Hop
+			<input type="radio" name="genre" value="Pop" /> Pop
+			<input type="radio" name="genre" value="Pre-2000" />Pre-2000's
+			<input type="radio" name="genre" value="Rock-N-Roll" /> Rock-N-Roll
+			<input type="radio" name="genre" value="Death-Metal" /> Death-Metal
+			<input type="radio" name="genre" value="Jazz" />Jazz
+			<br />
+		<p>Relationship status</p>
+			<input type="radio" name="relationshipStatus" value="Single" checked = "checked"/>Single
+			<input type="radio" name="relationshipStatus" value="Married" /> Married
+			<input type="radio" name="relationshipStatus" value="Complicated" />It's Complicated
+			<br />
+		<label for="aboutYourself">
+		Tell us about yourself:
+		</label>
+		<br />
+		<textarea rows="4" cols="40" id="aboutYourself">
+		</textarea>
+		<p>What is your horoscope?</p>
+			<select name="horoscope">
+				<option value="Aries">Aries</option>
+				<option value="Taurus">Taurus</option>
+				<option value="Gemini">Gemini</option>
+				<option value="Cancer">Cancer</option>
+				<option value="Leo">Leo</option>
+				<option value="Virgo">Virgo</option>
+				<option value="Libra">Libra</option>
+				<option value="Scorpio">Scorpio</option>
+				<option value="Sagittarius">Sagittarius</option>
+				<option value="Capricorn">Capricorn</option>
+				<option value="Aquarius">Aquarius</option>
+				<option value="Pisces">Pisces</option>
+			</select>
+			<br />
+		<label for="lookingFor">
+		What are the qualities in a person you are looking for?
+		</label>
+		<br />
+		<textarea rows="4" cols="40" id="lookingFor">
+		</textarea>
+		<br />
+		<label>Preffered Cereal
+			<input type="text" name="favoriteCereal" size="30" maxlength="45">
+		</label>
+		<label>SHoe size;)
+			<input type="text" name="shoeSize" size="10" maxlength="2">
+		</label>
+		<input type="submit" name="submit" value="submit"/>
+		</form>
+</html>
