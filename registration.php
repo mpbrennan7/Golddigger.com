@@ -5,7 +5,7 @@
 	$server = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
 	$username = "root";
 	$password = "password";
-	$dbname = "Golddigger.com";
+	$dbname = "golddigger";
 	$port = 3306;
 
 
