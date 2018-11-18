@@ -1,9 +1,9 @@
 <?php
   //session_start();
   // create short variable names
-  //$username = $_POST['username'];
-  //$password = $_POST['password'];
-  //$_SESSION['username'] = $username;
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $_SESSION['username'] = $username;
 ?>
 <html>
 <head>
@@ -58,7 +58,7 @@
 		$phash = password_hash('test', PASSWORD_BCRYPT, $options)."\n";
 		
 		
-	$sql = "SELECT password FROM Users WHERE username='$username'";
+	$sql = "SELECT pword FROM Users WHERE user='$username'";
 	$result = $conn->query($sql);
 
 	$passhash;
