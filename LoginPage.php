@@ -1,17 +1,17 @@
 <?php
   //session_start();
   // create short variable names
-  //$username = $_POST['username'];
-  //$password = $_POST['password'];
-  //$_SESSION['username'] = $username;
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $_SESSION['username'] = $username;
 ?>
 <html>
 <head>
-  <title>Brian's Light Bulb Shop - Order Results</title>
+  <title>Gold Digger</title>
   <link rel="stylesheet" href="PageStyles.css">
 </head>
 <body>
-<h1>Brian's Light Bulb Shop</h1>
+<h1>Gold Digger</h1>
 <?php
 
 	class USER{
@@ -34,7 +34,7 @@
 
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 	
-	$sql = "SELECT * FROM Users WHERE username='$username' AND password='$password'";
+	$sql = "SELECT * FROM Users WHERE name='$username' AND pword='$password'";
 	
 	$user_array = array();
 	 
@@ -58,7 +58,7 @@
 		$phash = password_hash('test', PASSWORD_BCRYPT, $options)."\n";
 		
 		
-	$sql = "SELECT password FROM Users WHERE username='$username'";
+	$sql = "SELECT pword FROM Users WHERE user='$username'";
 	$result = $conn->query($sql);
 
 	$passhash;
