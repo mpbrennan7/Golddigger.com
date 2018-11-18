@@ -1,18 +1,38 @@
 body {
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+	
 }
 
 h1 {
     color: black;
+	font-family: verdana;
     text-align: center;
+	font-weight: bold;
+	text-shadow:
+        0.05em 0 white,
+        0 0.05em white,
+        -0.05em 0 white,
+        0 -0.05em white;
 }
 
 p,tr {
     font-family: verdana;
-    font-size: 20px;
+	font-weight: bold;
+    font-size: 30px;
+		text-shadow:
+        0.05em 0 white,
+        0 0.05em white,
+        -0.05em 0 white,
+        0 -0.05em white;
 }
 
 td,input,button{
     font-family: verdana;
-    font-size: 20px;
+	font-weight: bold;
+    font-size: 30px;
+		text-shadow:
+        0.05em 0 white,
+        0 0.05em white,
+        -0.05em 0 white,
+        0 -0.05em white;
 }
