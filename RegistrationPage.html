@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>Please fill out the information below</h1>
-		<form action="registration.php" method = "post">
+		<form action="CreateAccount.php" method = "post">
 		
 
 		<table border="0">
@@ -39,30 +39,29 @@
 			</tr>
 			
 		</table>
-			
-			<p>Which type of user are you?</p>
-			<select name="UserType">
-				<option value="SugarDaddy">Sugar Daddy</option>
-				<option value="Cougar">Cougar</option>
-				<option value="GoldDiggerMale">Gold Digger Male</option>
-				<option value="GoldDiggerFemale">Gold Digger Female</option>
-			</select>
-
-			
-
-			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
-			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
-			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
-			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
-			<br />
-			<br />
-			<input type="submit" name="Submit" value="Submit"/>
-		</form>
-			
-			
-			
 <<<<<<< HEAD
+<<<<<<< HEAD
+		<!--	
+			<p>Which type of user are you?</p>
+			<select name="UserType">
+				<option value="SugarDaddy">Sugar Daddy</option>
+				<option value="Cougar">Cougar</option>
+				<option value="GoldDiggerMale">Gold Digger Male</option>
+				<option value="GoldDiggerFemale">Gold Digger Female</option>
+			</select>
+
+=======
+			
+>>>>>>> 1a7b5ae59880c58a43295c3ec7792bca7cf94015
+=======
+			
+			
+>>>>>>> 1a7b5ae59880c58a43295c3ec7792bca7cf94015
+			
+			
+		
+			
+<<<<<<< HEAD-->	
 			<p>Which type of user are you?</p>
 			<select name="UserType">
 				<option value="SugarDaddy">Sugar Daddy</option>
@@ -75,14 +74,14 @@
 			<br />
 			<br />
 			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
-			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
-			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
-			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
+			<input type="radio" name="Income" id="lc" value="Lower Class" checked = "checked"/><label for="lc">$0-$50,000</label>
+			<input type="radio" name="Income" id="mc" value="Middle Class" /><label for="mc">$51,000-$200,000</label>
+			<input type="radio" name="Income" id="uc" value="Upper Class"/><label for="uc">$200,000-$500,000</label>
+			<input type="radio" name="Income" id="fs" value="Fat Stackz"/><label for="fs">Fat Stackz</label>
 			<br />
 			<br />
 			
-			
+			<!--
 			<table border="0">
 				<tr>
 					<td width="150"></td>
@@ -113,26 +112,37 @@
 					<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
 				</tr>
 				
-			</table>
+<<<<<<< HEAD
+<<<<<<< HEAD
+			</table>-->
 			
+=======
+			</table>
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+>>>>>>> 1a7b5ae59880c58a43295c3ec7792bca7cf94015
+=======
+			</table>
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+>>>>>>> 1a7b5ae59880c58a43295c3ec7792bca7cf94015
 			<div style ="width: 50%; float:left;">
 			<p>Hair color?</p>
+			<input type="radio" name="hair" id="White" value="White" required checked = "checked"/><label for="White">White</label>
+			<input type="radio" name="hair" id="Brown" value="Brown" checked = "checked"/><label for="Brown">Brown</label>
+			<input type="radio" name="hair" id="Black" value="Black" /><label for="Black">Black</label>
+			<input type="radio" name="hair" id="Blonde" value="Blonde"/><label for="Blonde">Blonde</label>
+			<input type="radio" name="hair" id="Red" value="Red"/><label for="Red">Red</label>
+			
+			</div>
+		
+			<!--
+			<div style ="width: 50%; float:left;">
+			<p>Preferred hair color?</p>
 			<input type="radio" name="hair" value="White" required checked = "checked"/>White
 			<input type="radio" name="hair" value="Brown" checked = "checked"/>Brown
 			<input type="radio" name="hair" value="Black" />Black
 			<input type="radio" name="hair" value="Blonde"/>Blonde
 			<input type="radio" name="hair" value="Red"/>Red
-			
-			</div>
-		
-			<div style ="width: 50%; float:left;">
-			<p>Preferred hair color?</p>
-			<input type="radio" name="eye" value="White" required checked = "checked"/>White
-			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown
-			<input type="radio" name="eye" value="Black" />Black
-			<input type="radio" name="eye" value="Blonde"/>Blonde
-			<input type="radio" name="eye" value="Red"/>Red
-			</div>	
+			</div>	-->
 			
 			<div style ="width: 50%; float:left;">
 			<p>Your eye color:</p>
@@ -276,7 +286,7 @@
 				<option value="13">13</option>
 				<option value="14">14+</option>
 			</select>
-			
+			</div>
 			<br />
 			<br />
 			<br />
