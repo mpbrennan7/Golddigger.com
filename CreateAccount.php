@@ -1,8 +1,34 @@
 <?php
   //session_start();
   // create short variable names
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+  $fullname = $_POST['FullName'];
+  $password = $_POST['Password'];
+  $age = $_POST['age'];
+  $email = $_POST['email'];
+  $zipcode = $_POST['zipcode'];
+  $income = $_POST[];
+  $phoneNum = $_POST['phoneNum'];
+  $type = $_POST[];
+  $numCars = $_POST[];
+  $hairColor = $_POST[];
+  $eyeColor = $_POST[];
+  $height = $_POST[];
+  $catOrDog = $_POST[];
+  $religious = $_POST[];
+  $ruralOrUrban = $_POST[];
+  $cook = $_POST[];
+  $beachOrSki = $_POST[];
+  $introvertOrExtrovert = $_POST[];
+  $genre = $_POST[];
+  $relationshipStatus = $_POST[];
+  $aboutYourself = $_POST[];
+  $horoscope = $_POST[];
+  $lookingFor = $_POST[];
+  $favoriteCereal = $_POST[];
+  $shoeSize = $_POST[];
+  
+
+  
   //$_SESSION['username'] = $username;
 ?>
 <html>
@@ -27,7 +53,7 @@
 	$options = ['cost' => 7];
 	$phash = password_hash($password, PASSWORD_BCRYPT, $options)."\n";
 		
-	$sql = "INSERT INTO Users (username, password) VALUES('$username', '$phash')";
+	$sql = "INSERT INTO Users (name, pword, age, email, zip, income, phoneNum, type, numCars, hairColor, eyeColor, height, catOrDog, religious, ruralOrUrban, cook, beachOrSki, introvertOrExtrovert, genre, relationshipStatus, aboutYourself, horoscope, lookingFor, favoriteCereal, shoeSize) VALUES('$fullname', '$phash')";
 		
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";

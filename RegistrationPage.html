@@ -6,36 +6,61 @@
 	<body>
 		<h1>Please fill out the information below</h1>
 		<form action="registration.php" method = "post">
+		
+
+		<table border="0">
+			<tr>
+				<td width="150"></td>
+				<td width="150" bgcolor="gray";>New Account Credentials</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td align="left"><input type="text" name="email" size="30" maxlength="100" required="required"></td>
+			</tr>
+			<tr>
+				<td>Phone Number</td>
+				<td align="left"><input type="text" name="phoneNum" size="30" maxlength="100" required="required"></td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td align="left"><input type="text" name="age" size="30" maxlength="100" required="required"></td>
+			</tr>
+			<tr>
+				<td>Zip Code</td>
+				<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
+			</tr>
 			
-			<table border="0">
-				<tr>
-					<td width="150"></td>
-					<td width="150" bgcolor="gray";>New Account Credentials</td>
-				</tr>
-				<tr>
-					<td>Name</td>
-					<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td align="left"><input type="text" name="email" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Phone Number</td>
-					<td align="left"><input type="text" name="phoneNum" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Age</td>
-					<td align="left"><input type="text" name="age" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Zip Code</td>
-					<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
-				</tr>
+		</table>
+			
+			<p>Which type of user are you?</p>
+			<select name="UserType">
+				<option value="SugarDaddy">Sugar Daddy</option>
+				<option value="Cougar">Cougar</option>
+				<option value="GoldDiggerMale">Gold Digger Male</option>
+				<option value="GoldDiggerFemale">Gold Digger Female</option>
+			</select>
+
+			
+
+			<p>How much money do you make a year?</p>
+			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
+			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
+			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
+			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
+			<br />
+			<br />
+			<input type="submit" name="Submit" value="Submit"/>
+		</form>
+			
+			
 			
 			<!--
 			<fieldset> 
@@ -75,31 +100,13 @@
 				<br />
 			</fieldset>
 			
-			-->
-			
-			<p>Which type of user are you?</p>
-			<select name="UserType">
-				<option value="SugarDaddy">Sugar Daddy</option>
-				<option value="Cougar">Cougar</option>
-				<option value="GoldDiggerMale">Gold Digger Male</option>
-				<option value="GoldDiggerFemale">Gold Digger Female</option>
-			</select>
-			<br />
-			<br />
 			<label>Zip Code: 
 			<input type="text" name="Zip" size="30" maxlength="100" required="required">
 			</label>
-			<br />
-			<br />
-			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
-			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
-			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
-			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
-			<br />
-			<br />
-			<input type="submit" name="Submit" value="Submit"/>
-		</form>
+			
+			-->
+			
+			
 		
 	</body>
 </html>
