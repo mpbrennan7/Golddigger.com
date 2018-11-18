@@ -101,7 +101,7 @@
 	$options = ['cost' => 7];
 	$phash = password_hash($password, PASSWORD_BCRYPT, $options)."\n";
 		
-	$sql = "INSERT INTO Users (name, pword, age, email, zip, income, phoneNum, type, numCars, hairColor, eyeColor, height, catOrDog, religious, ruralOrUrban, cook, beachOrSki, introvertOrExtrovert, genre, relationshipStatus, aboutYourself, horoscope, lookingFor, favoriteCereal, shoeSize) VALUES('$fullname', '$phash', $age, $email, $zipcode, $income, $phoneNum, '$type', $numCars, '$hairColor', '$eyeColor', $height, $catOrDog, $religious, $ruralOrUrban, $cook, $beachOrSki, $introvertOrExtrovert, '$genre', '$relationshipStatus', '$aboutYourself', '$horoscope', '$lookingFor', '$favoriteCereal', $shoeSize)";
+	$sql = "INSERT INTO Users (name, pword, age, email, zip, income, phoneNum, type, numCars, hairColor, eyeColor, height, catOrDog, religious, ruralOrUrban, cook, beachOrSki, introvertOrExtrovert, genre, relationshipStatus, aboutYourself, horoscope, lookingFor, favoriteCereal, shoeSize) VALUES('$fullname', '$phash', $age, '$email', $zipcode, $income, $phoneNum, '$type', $numCars, '$hairColor', '$eyeColor', $height, $catOrDog, $religious, $ruralOrUrban, $cook, $beachOrSki, $introvertOrExtrovert, '$genre', '$relationshipStatus', '$aboutYourself', '$horoscope', '$lookingFor', '$favoriteCereal', $shoeSize)";
 		
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
