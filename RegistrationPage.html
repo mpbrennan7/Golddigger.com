@@ -7,6 +7,27 @@
 		<h1>Please fill out the information below</h1>
 		<form action="registration.php" method = "post">
 			
+			
+			<p>Which type of user are you?</p>
+			<select name="UserType">
+				<option value="SugarDaddy">Sugar Daddy</option>
+				<option value="Cougar">Cougar</option>
+				<option value="GoldDiggerMale">Gold Digger Male</option>
+				<option value="GoldDiggerFemale">Gold Digger Female</option>
+			</select>
+			<br />
+			<br />
+			<br />
+			<br />
+			<p>How much money do you make a year?</p>
+			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
+			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
+			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
+			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
+			<br />
+			<br />
+			
+			
 			<table border="0">
 				<tr>
 					<td width="150"></td>
@@ -36,68 +57,176 @@
 					<td>Zip Code</td>
 					<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
 				</tr>
+				
+			</table>
 			
-			<!--
-			<fieldset> 
-				<legend>
-				Your Details:
-				
-				
-				
-				
-				<!--
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Create Account"/></td>
-				</tr>
-				</table>
-				
-				<!--
-				</legend>
-				<label>Name: 
-				<input type= "text" name= "FullName" size = "30" maxlength = "100" required="required">
-				</label>
-				<br />
-				<label>Password: 
-				<input type="text" name="Password" size="30" maxlength="100" required="required">
-				</label>
-				<br />
-				<label>Email: 
-				<input type="email" name="Email" size ="30" maxlength="100" required="required">
-				</label>
-				<br />
-				<label>Phone Number: 
-				<input type="text" name="PhoneNumber" size ="30" maxlength="100" required="required">
-				</label>
-				<br />
-				<label>Age: 
-				<input type="text" name="Age" size="30" maxlength="100" required="required">
-				</label>
-				<br />
-			</fieldset>
+			<div style ="width: 50%; float:left;">
+			<p>Hair color?</p>
+			<input type="radio" name="hair" value="White" required checked = "checked"/>White
+			<input type="radio" name="hair" value="Brown" checked = "checked"/>Brown
+			<input type="radio" name="hair" value="Black" />Black
+			<input type="radio" name="hair" value="Blonde"/>Blonde
+			<input type="radio" name="hair" value="Red"/>Red
 			
-			-->
+			</div>
+		
+			<div style ="width: 50%; float:left;">
+			<p>Preferred hair color?</p>
+			<input type="radio" name="eye" value="White" required checked = "checked"/>White
+			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown
+			<input type="radio" name="eye" value="Black" />Black
+			<input type="radio" name="eye" value="Blonde"/>Blonde
+			<input type="radio" name="eye" value="Red"/>Red
+			</div>	
 			
-			<p>Which type of user are you?</p>
-			<select name="UserType">
+			<div style ="width: 50%; float:left;">
+			<p>Your eye color:</p>
+			<input type="radio" name="eye" value="Green" required checked = "checked"/>Green
+			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown
+			<input type="radio" name="eye" value="Blue" />Blue
+			<input type="radio" name="eye" value="Hazel"/>Hazel
+			<input type="radio" name="eye" value="Red"/>Red
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div style = "width: 50%; float:left;">
+			<p>Your height</p>
+			<input type= "text" name= "height_feet" size = "5" maxlength = "2" required="required">feet
+			<input type= "text" name= "height_inches" size = "5" maxlength = "2" required="required">inches
+			</div>
+			
+			<div style = "width: 50%; float:left;">
+			<p>Cats or dogs?</p>
+			<input type="radio" name="catsdogs" value="cats" required checked = "checked"/>Cats
+			<input type="radio" name="catsdogs" value="dogs" checked = "checked"/>Dogs
+			</div>
+			
+			<div style = "width: 50%; float:right;">
+			<p>Religious?</p>
+			<input type="radio" name="religious" value="yes" required checked = "checked"/>yes
+			<input type="radio" name="religious" value="no" checked = "checked"/>no
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div style = "width: 50%; float:left;">
+			<p>Rural or Urban?</p>
+			<input type="radio" name="ruralurban" value="rural" required checked = "checked"/>Rural
+			<input type="radio" name="ruralurban" value="urban" checked = "checked"/>Urban
+			</div>
+			<div style = "width: 50%; float:right;">
+			<p>Can you cook?</p>
+			<input type="radio" name="cook" value="yes" required checked = "checked"/>yes
+			<input type="radio" name="cook" value="no" checked = "checked"/>no
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div style = "width: 50%; float:left;">
+			<p>Beach vacation or ski getaway?</p>
+			<input type="radio" name="beachski" value="beach" required checked = "checked"/>Beach
+			<input type="radio" name="beachski" value="ski" checked = "checked"/>Ski
+			</div>
+			<div style = "width: 50%; float:right;">
+			<p>Introvert or Extrovert?</p>
+			<input type="radio" name="introextro" value="introvert" required checked = "checked"/>Introvert
+			<input type="radio" name="introextro" value="extrovert" checked = "checked"/>Extrovert
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			
+			<div style = "width: 50%; float:left;">
+			<p>Genre of music?</p>
+			<select name="genre">
+				<option value="Country">Country</option>
+				<option value="Rap">Rap</option>
+				<option value="Rock">Rock</option>
+				<option value="Soul">Soul</option>
+			</select>
+			</div>
+			<div style = "width: 50%; float:right;">
+			<p>Relationship status?</p>
+			<select name="relationship">
+				<option value="single">Single</option>
+				<option value="looking">Looking around</option>
+				<option value="complicated">It's complicated</option>
+			</select>
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div style = "width: 50%; float:left;">
+			<p>About yourself</p>
+			<textarea name= "aboutyourself" rows = "4" cols = "30" maxlength = "280" required="required"> </textarea>
+			</div>
+			
+			<div style = "width: 50%; float:right;">
+			<p>Horoscope?</p>
+			<select name="horoscope">
+				<option value="aries">Aries (Mar 20- Apr 20)</option>
+				<option value="taurus">Taurus (Apr 20- May 21)</option>
+				<option value="gemini">Gemini (May 21- Jun 21)</option>
+				<option value="cancer">Cancer (Jun 21- Jul 23)</option>
+				<option value="leo">Leo (Jul 23- Aug 23)</option>
+				<option value="virgo">Virgo (Aug 23- Sep 23)</option>
+				<option value="libra">Libra (Sep 23- Oct 23)</option>
+				<option value="scorpio">Scorpio (Oct 23- Nov 22)</option>
+				<option value="sagittarius">Sagittarius (Nov 22- Dec 22)</option>
+				<option value="capricorn">Capricorn (Dec 22- Jan 20)</option>
+				<option value="aquarius">Aquarius (Jan 20- Feb 18)</option>
+				<option value="aries">Pisces (Feb 18- Mar 20)</option>
+			</select>
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			
+			
+			<p>Who are you looking for?</p>
+			<select name="lookingfor">
 				<option value="SugarDaddy">Sugar Daddy</option>
 				<option value="Cougar">Cougar</option>
 				<option value="GoldDiggerMale">Gold Digger Male</option>
 				<option value="GoldDiggerFemale">Gold Digger Female</option>
 			</select>
+			
 			<br />
 			<br />
-			<label>Zip Code: 
-			<input type="text" name="Zip" size="30" maxlength="100" required="required">
-			</label>
 			<br />
 			<br />
-			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
-			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
-			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
-			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
+			
+			<div style = "width: 50%; float:left;">
+			<p>Favorite cereal?</p>
+			<input type= "text" name= "cereal" size = "20" maxlength = "100" required="required">
+			</div>
+			<div style = "width: 50%; float:right;">
+			<p>Shoe size?</p>
+			<select name="shoe">
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14+</option>
+			</select>
+			
 			<br />
 			<br />
+			<br />
+			<br />
+			
 			<input type="submit" name="Submit" value="Submit"/>
 		</form>
 		
