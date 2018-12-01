@@ -1,9 +1,9 @@
 <?php
   //session_start();
   // create short variable names
-  $email = $_POST['email'];
+  $username = $_POST['username'];
   $password = $_POST['password'];
-  $_SESSION['email'] = $email;
+  $_SESSION['username'] = $username;
 ?>
 <html>
 <head>
@@ -15,11 +15,11 @@
 <?php
 
 	class USER{
-	    public $email = "";
+	    public $username = "";
         public $password = "";
 	
-	function __construct($email, $password){
-		$this->email = $email;
+	function __construct($username, $password){
+		$this->username = $username;
 		$this->password = $password;
 	}
 	}
@@ -34,7 +34,7 @@
 
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 	
-	$sql = "SELECT * FROM Users WHERE name='$email' AND password='$password'";
+	$sql = "SELECT * FROM Users WHERE name='$username' AND pword='$password'";
 	
 	$user_array = array();
 	 
@@ -42,7 +42,7 @@
 	if($result = $conn->query($sql)){
 
 	while($obj = $result->fetch_object()){
-		$temp_user = new USER($obj->email, $obj->password);
+		$temp_user = new USER($obj->username, $obj->password);
 		$user_array[] = $temp_user;
 	}
   
@@ -58,7 +58,7 @@
 		$phash = password_hash('test', PASSWORD_BCRYPT, $options)."\n";
 		
 		
-	$sql = "SELECT password FROM Users WHERE user='$email'";
+	$sql = "SELECT pword FROM Users WHERE user='$username'";
 	$result = $conn->query($sql);
 
 	$passhash;
@@ -82,7 +82,7 @@
 		echo 'Valid';
 		
 		session_start();
-		$_SESSION['email'] = $email;
+		$_SESSION['username'] = $username;
 		//header('Location: orderform.php');
 		
 		
