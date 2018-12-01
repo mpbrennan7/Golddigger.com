@@ -116,9 +116,14 @@ if($result ->num_rows >0){
 		//Counter
 		$i = $i + 1;
 		
+		
+		
 	}
 	
 }
+foreach($SugarDaddyArray as $daddy){
+	echo daddy -> getName();
+}	
 
 
 

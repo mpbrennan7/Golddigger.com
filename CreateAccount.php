@@ -112,6 +112,6 @@
 		
 	
 	$conn->close();//close DB connection
-	//header('Location: LoginPage.html');
+	header('Location: LoginPage.html');
 
 ?>
