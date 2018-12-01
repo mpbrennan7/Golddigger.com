@@ -141,7 +141,7 @@ class User {
   
 }
  
-class SugarMommy extends User {
+class Cougar extends User {
   // The  child can use the parent's class code
   
 }
@@ -151,12 +151,12 @@ class SugarDaddy extends User {
   
 }
 
-class SugarBabyM extends User {
+class GolddiggerM extends User {
   // The  child can use the parent's class code
   
 }
 
-class SugarBabyF extends User {
+class GolddiggerF extends User {
   // The  child can use the parent's class code
   
 }
