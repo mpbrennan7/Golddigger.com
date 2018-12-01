@@ -52,7 +52,7 @@ $horoscope;
 $lookingFor;
 $favoriteCereal;
 $shoeSize;
-
+$userArray = array();
 
 
 //gets user information
@@ -86,46 +86,27 @@ foreach ($result as $row) {
 	$lookingFor=$row['lookingFor'];
 	$favoriteCereal=$row['favoriteCereal'];
 	$shoeSize=$row['shoeSize'];
-	
-	if($host_location[$i] ==$location){
-		$score = $score + 10000;
+	//Create object
+	$user;
+	if ($type == "SugarDaddy") {
+		$user = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
-	if(!($host_req_english[$i] == 0 || $req_english == 1)){
-		$score = $score + 200;
+	else if ($type == "Cougar") {
+		$user = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
-	else {
-		if($host_second_language[$i] == $second_language){
-			$score = $score + 100;
-		}
+	else if ($type=="GoldDiggerMale") {
+		$user = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
-	if($host_purpose[$i] == $purpose){
-		$score = $score + 500;
+	else if ($type=="GoldDiggerFemale") {
+		$user = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
-	if($host_rent[$i]==$rent){
-		$score = $score + 200;
-	}
-	
-	
-	
-	if($score > $top1score){
-		$top3score = $top2score;
-		$top3email = $top2email;
-		$top2score = $top1score;
-		$top2email = $top1email;
-		$top1score = $score;
-		$top1email = $host_email[$i];
-	}
-	else if($score > $top2score){
-		$top3score = $top2score;
-		$top3email = $top2email;
-		$top2score = $score;
-		$top2email = $host_email[$i];
-	}
-	else if($score > $top3score){
-		$top3score = $score;
-		$top3email = $host_email[$i];
-	}
-	
+	//Save the user to the array
+	$userArray[i] = $user;
+	//Counter
 	$i = $i + 1;
 	
 
