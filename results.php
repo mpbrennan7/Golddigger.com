@@ -1,11 +1,11 @@
 <?php
-
+require ('class_structure.php');
 session_start();
 
 #need some sort of session data/current account data
 
 	$server = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
-	$username = "root";
+	$username = "username";
 	$password = "password";
 	$dbname = "golddigger";
 	$port = 3306;
@@ -57,66 +57,35 @@ $shoeSize;
 
 //gets user information
 //Takes stuff from sql query and assigns them to a variable 
-if($result2->num_rows > 0){
-	while($row = $result2->fetch_assoc()){
-		$location = $row['location'];
-		$pets = $row['pet'];
-		$rent = $row['rent'];
-		$req_english = $row['reg_english'];//CHECK IMMIGRANT COLUMN NAME
-		$second_language=$row['second_lang'];//THIS ONE TOO
-		$purpose = $row['purpose'];
-	}
-}
 
-//gets match information
-$host_location = array();
-$host_pets = array();
-$host_req_english = array();
-$host_second_language = array();
-$host_rent = array();
-$host_purpose = array();
-$host_email = array();
-$i = 0;
-
-	$fname3;
-	$lname3;
-	$location3;
-	$fname2;
-	$lname2;
-	$location2;
-	$fname1;
-	$lname1;
-	$location1;
-	$score = 10;
-	//Assign scores to each object
 foreach ($result as $row) {
 	// These need to be attribute names from the table case sensitive 
 	
-	$email[$i]=$row['email'];
-	$name[$i]=$row['name'];
-	$pword[$i]=$row['pword'];
-	$age[$i]=$row['age'];
-	$income[$i]=$row['income'];
-	$phoneNum[$i]=$row['phoneNum'];
-	$type[$i]=$row['type'];
-	$sql[$i]=$row['users'];
-	$zip[$i]=$row['zip'];
-	$catOrDog[$i]=$row['catOrDog'];
-	$hairColor[$i]=$row['hairColor'];
-	$eyeColor[$i]=$row['eyeColor'];
-	$height[$i]=$row['height'];
-	$religious[$i]=$row['religious'];
-	$ruralOrUrban[$i]=$row['ruralOrUrban'];
-	$cook[$i]=$row['cook'];
-	$beachOrSki[$i]=$row['beachOrSki'];
-	$introvertOrExtrovert[$i]=$row['introvertOrExtrovert'];
-	$genre[$i]=$row['genre'];
-	$relationShipStatus[$i]=$row['relationShipStatus'];
-	$aboutYourself[$i]=$row['aboutYourself'];
-	$horoscope[$i]=$row['horoscope'];
-	$lookingFor[$i]=$row['lookingFor'];
-	$favoriteCereal[$i]=$row['favoriteCereal'];
-	$shoeSize[$i]=$row['shoeSize'];
+	$email=$row['email'];
+	$name=$row['name'];
+	$pword=$row['pword'];
+	$age=$row['age'];
+	$income=$row['income'];
+	$phoneNum=$row['phoneNum'];
+	$type=$row['type'];
+	$sql=$row['users'];
+	$zip=$row['zip'];
+	$catOrDog=$row['catOrDog'];
+	$hairColor=$row['hairColor'];
+	$eyeColor=$row['eyeColor'];
+	$height=$row['height'];
+	$religious=$row['religious'];
+	$ruralOrUrban=$row['ruralOrUrban'];
+	$cook=$row['cook'];
+	$beachOrSki=$row['beachOrSki'];
+	$introvertOrExtrovert=$row['introvertOrExtrovert'];
+	$genre=$row['genre'];
+	$relationShipStatus=$row['relationShipStatus'];
+	$aboutYourself=$row['aboutYourself'];
+	$horoscope=$row['horoscope'];
+	$lookingFor=$row['lookingFor'];
+	$favoriteCereal=$row['favoriteCereal'];
+	$shoeSize=$row['shoeSize'];
 	
 	if($host_location[$i] ==$location){
 		$score = $score + 10000;
