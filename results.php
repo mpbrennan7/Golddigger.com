@@ -28,7 +28,7 @@ mysqli_fetch_all($result,MYSQLI_ASSOC);
 //mysqli_free_result($result);
 //Variables for the results and algorithm
 $email=$_SESSION['email'];
-$sql="SELECT * FROM users WHERE email='$email'";
+$sql="SELECT * FROM users";
 $name;
 $pword;
 $age;
@@ -91,6 +91,7 @@ foreach ($result as $row) {
 	if ($type == "SugarDaddy") {
 		$user = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+		
 	}
 	else if ($type == "Cougar") {
 		$user = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
@@ -106,6 +107,7 @@ foreach ($result as $row) {
 	}
 	//Save the user to the array
 	$userArray[i] = $user;
+	echo $userArray[i];
 	//Counter
 	$i = $i + 1;
 	
