@@ -176,9 +176,10 @@ foreach($GoldDiggerMaleArray as $gdm){
 	echo $gdm -> getName();
 }
 */
-<<<<<<< HEAD
+
 $apikey = "se4wSwtmJV8JCvLWIhLPvKjUlgdRDhifDdwHOJKuu7JQ0MZkPzIZlNkFN4x19IUM";
 $zip1 = $ss_curr_user->getZip();
+
 if($ss_curr_user->getType_() == "SugarDaddy"){
 	foreach($GoldDiggerFemaleArray as $thot) {
 		$zip2 = $thot->getZip();
@@ -195,19 +196,13 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 		else if($distvar >20 && $distvar <= 100){
 			$thot->setScore($thot->getScore()+600);
 		}
-=======
-//
-if($ss_curr_user->getType_() == "SugarDaddy"){
-	foreach($GoldDiggerFemaleArray as $thot) {
 		//Compares the age of the GoldDiggerFemale to the SugarDaddy
->>>>>>> 876f9ab2620800acab908fe6dc31d1039c28c966
 		if ($ss_curr_user->getAge()-$thot->getAge()>30){
 			$thot->setScore($thot->getScore()+50);
 		}
 		else if ($ss_curr_user->getAge()-$thot->getAge()>=20 && $ss_curr_user->getAge()-$thot->getAge()<=30){
 			$thot->setScore($thot->getScore()+10);
-<<<<<<< HEAD
-=======
+
 		}
 		//Assigns points based on the income of GoldDiggerFemale
 		if ($thot->getIncome() ==0) {
@@ -235,7 +230,6 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 		}
 		else if ($thot->getHairColor()=="Brown") {
 			$thot->setScore($thot->getScore()+40);
->>>>>>> 876f9ab2620800acab908fe6dc31d1039c28c966
 		}
 		else if ($thot->getHairColor()=="Red") {
 			$thot->setScore($thot->getScore()+30);
