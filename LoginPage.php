@@ -69,11 +69,9 @@
 		}
 	} else {//no result
 		echo "<p>The account and password credentials do not match!  Returning back to login screen in 5 seconds.</p>";//state credentials do not match 
-		//header('Refresh: 5; URL=login.html');
-		//exit;
+		header('Refresh: 5; URL=LoginPage.html');
+		exit;
 	}
-		
-	//echo $passhash.'<br/>';
 		
 	$passhash = substr( $passhash, 0, 60 );//make sure hash is trimmed to right length
 	
@@ -85,9 +83,6 @@
 		$curruserarray = array();//make a user array for holding user objects
 	 
 		if($currresult = $conn->query($allinfo)){//obtain the result
-
-			
-		
 			while($currobj = $currresult->fetch_object()){
 				//echo "here";
 				$curr_user = new User($currobj->name, $currobj->pword, $currobj->age, $currobj->email, $currobj->zip, $currobj->income, $currobj->phoneNum, $currobj->type, $currobj->hairColor, $currobj->eyeColor, $currobj->height, $currobj->catOrDog, $currobj->religious, $currobj->cook, $currobj->beachOrSki, $currobj->introvertOrExtrovert, $currobj->genre, $currobj->relationshipStatus, $currobj->aboutYourself, $currobj->horoscope, $currobj->lookingFor, $currobj->favoriteCereal, $currobj->shoeSize);//make new user objects
@@ -95,22 +90,18 @@
 				//echo $currobj->name;
 			}
 		} 
-		
 		echo 'Valid';//tell user password is valid
 		
 		session_start();//begin a PHP session_cache_expire
 		$_SESSION['curr_user'] = $curr_user;
 
-		//header('Location: orderform.php');
-		
-		
+		header('Location: results.php');
 		//echo "<script> location.href='orderform.html'; </script>";
 	}
 	else{//credentials do not match when password verify happens
-		//echo 'Invalid';
 		echo "<p>The account and password credentials do not match!  Returning back to login screen in 5 seconds.</p>";//state credentials do not match
-		//header('Refresh: 5; URL=login.html');
-		//exit;
+		header('Refresh: 5; URL=LoginPage.html');
+		exit;
 	}
 		
 	if ($i != count($user_array) - 1){//loop through objects in user array
