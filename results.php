@@ -1,11 +1,7 @@
 <?php
+
 session_start();
-$top1score = -1;
-$top2score = -1;
-$top3score = -1;
-$top1email = "filler@php.com";
-$top2email = "filler@php.com";
-$top3email = "filler@php.com";
+
 #need some sort of session data/current account data
 
 	$server = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
@@ -33,7 +29,6 @@ mysqli_fetch_all($result,MYSQLI_ASSOC);
 //Variables for the results and algorithm
 $email=$_SESSION['email'];
 $sql="SELECT * FROM users WHERE email='$email'";
-$result2=$con->query($sql);
 $name;
 $pword;
 $age;
@@ -59,7 +54,9 @@ $favoriteCereal;
 $shoeSize;
 
 
-//gets immigrant information
+
+//gets user information
+//Takes stuff from sql query and assigns them to a variable 
 if($result2->num_rows > 0){
 	while($row = $result2->fetch_assoc()){
 		$location = $row['location'];
@@ -71,7 +68,7 @@ if($result2->num_rows > 0){
 	}
 }
 
-//gets hosts' information
+//gets match information
 $host_location = array();
 $host_pets = array();
 $host_req_english = array();
