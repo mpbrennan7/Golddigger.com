@@ -1,6 +1,54 @@
 <?php
 require_once ('class_structure.php');
 session_start();
+$ss_curr_user = $_SESSION['curr_user'];
+
+echo $ss_curr_user->getName();
+echo "<br/>";
+echo $ss_curr_user->getPword();
+echo "<br/>";
+echo $ss_curr_user->getAge();
+echo "<br/>";
+echo $ss_curr_user->getEmail();
+echo "<br/>";
+echo $ss_curr_user->getZip();
+echo "<br/>";
+echo $ss_curr_user->getIncome();
+echo "<br/>";
+echo $ss_curr_user->getPhoneNum();
+echo "<br/>";
+echo $ss_curr_user->getType_();
+echo "<br/>";
+echo $ss_curr_user->getHairColor();
+echo "<br/>";
+echo $ss_curr_user->getEyeColor();
+echo "<br/>";
+echo $ss_curr_user->getHeight();
+echo "<br/>";
+echo $ss_curr_user->getCatOrDog();
+echo "<br/>";
+echo $ss_curr_user->getReligious();
+echo "<br/>";
+echo $ss_curr_user->getCook();
+echo "<br/>";
+echo $ss_curr_user->getBeachOrSki();
+echo "<br/>";
+echo $ss_curr_user->getIntrovertOrExtrovert();
+echo "<br/>";
+echo $ss_curr_user->getGenre();
+echo "<br/>";
+echo $ss_curr_user->getRelationshipStatus();
+echo "<br/>";
+echo $ss_curr_user->getAboutYourself();
+echo "<br/>";
+echo $ss_curr_user->getHoroscope();
+echo "<br/>";
+echo $ss_curr_user->getLookingFor();
+echo "<br/>";
+echo $ss_curr_user->getFavoriteCereal();
+echo "<br/>";
+echo $ss_curr_user->getShoeSize();
+
 
 #need some sort of session data/current account data
 
