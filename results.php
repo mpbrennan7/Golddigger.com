@@ -94,20 +94,20 @@ if($result ->num_rows >0){
 		//Create object
 		$user;
 		if ($type == "SugarDaddy") {
-			$SugarDaddyArray[i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+			$SugarDaddyArray[$i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 			
 		}
 		else if ($type == "Cougar") {
-			$CougarArray[i] = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+			$CougarArray[$i] = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		}
 		else if ($type=="GoldDiggerMale") {
-			$GoldDiggerMaleArray[i] = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+			$GoldDiggerMaleArray[$i] = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		}
 		else if ($type=="GoldDiggerFemale") {
-			$GoldDiggerFemaleArray[i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+			$GoldDiggerFemaleArray[$i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		}
 		//Save the user to the array
@@ -117,9 +117,10 @@ if($result ->num_rows >0){
 		$i = $i + 1;
 		
 	}
+	
 }
 
-	
+
 
 	
 	
