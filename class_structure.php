@@ -60,86 +60,86 @@ class User {
   }
   
   public function getName(){
-	  return this -> $name;
+	  return $name;
   }
   public function getPword(){
-	  return this -> $pword;
+	  return  $pword;
   }
   public function getAge(){
-	  return this -> $age;
+	  return  $age;
   }
   public function getEmail(){
-	  return this -> $email;
+	  return  $email;
   }
   public function getZip(){
-	  return this -> $zip;
+	  return  $zip;
   }
   public function getIncome(){
-	  return this -> $income;
+	  return  $income;
   }
   public function getPhoneNum(){
-	  return this -> $phoneNum;
+	  return  $phoneNum;
   }
   public function getType_(){
-	  return this -> $type;
+	  return  $type;
   }
   public function getNumCars(){
-	  return this -> $numCars;
+	  return  $numCars;
   }
   public function getHairColor(){
-	  return this -> $hairColor;
+	  return  $hairColor;
   }
   public function getEyeColor(){
-	  return this -> $eyeColor;
+	  return  $eyeColor;
   }
   public function getHeight(){
-	  return this -> $height;
+	  return  $height;
   }
   public function getCatOrDog(){
-	  return this -> $catOrDog;
+	  return  $catOrDog;
   }
   public function getReligious(){
-	  return this -> $religious;
+	  return  $religious;
   }
   public function getCook(){
-	  return this -> $cook;
+	  return  $cook;
   }  
   public function getBeachOrSki(){
-	  return this -> $beachOrSki;
+	  return  $beachOrSki;
   }
   public function getIntrovertOrExtrovert(){
-	  return this -> $introvertOrExtrovert;
+	  return  $introvertOrExtrovert;
   }
   public function getGenre(){
-	  return this -> $genre;
+	  return  $genre;
   }
   public function getRelationshipStatus(){
-	  return this -> $relationshipStatus;
+	  return  $relationshipStatus;
   }
   public function getAboutYourself(){
-	  return this -> $aboutYourself;
+	  return  $aboutYourself;
   }
   public function getHoroscope(){
-	  return this -> $horoscope;
+	  return  $horoscope;
   }
   public function getLookingFor(){
-	  return this -> $lookingFor;
+	  return  $lookingFor;
   }
   public function getFavoriteCereal(){
-	  return this -> $favoriteCereal;
+	  return  $favoriteCereal;
   }
   public function getShoeSize(){
-	  return this -> $shoeSize;
+	  return  $shoeSize;
   }
   public function getScore(){
-	  return this -> $score;
+	  return  $score;
   }
   public function setScore($scr){
 	  $score = $scr;
-  
-  
+  }
   
 }
+
  
 class Cougar extends User {
   // The  child can use the parent's class code

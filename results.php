@@ -1,5 +1,5 @@
 <?php
-require ('class_structure.php');
+require_once ('class_structure.php');
 session_start();
 
 #need some sort of session data/current account data
@@ -17,8 +17,10 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
+ $sql="SELECT * FROM users";
 
-$sql="SELECT * FROM users";
+
+ 
 $result=mysqli_query($con,$sql);
 
 // Fetch all
@@ -52,7 +54,10 @@ $horoscope;
 $lookingFor;
 $favoriteCereal;
 $shoeSize;
-$userArray = array();
+$SugarDaddyArray = array();
+$CougarArray = array();
+$GoldDiggerFemaleArray = array();
+$GoldDiggerMaleArray = array();
 
 
 //gets user information
@@ -89,20 +94,20 @@ foreach ($result as $row) {
 	//Create object
 	$user;
 	if ($type == "SugarDaddy") {
-		$user = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+		$SugarDaddyArray[i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		
 	}
 	else if ($type == "Cougar") {
-		$user = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+		$CougarArray[i] = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
 	else if ($type=="GoldDiggerMale") {
-		$user = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+		$GoldDiggerMaleArray[i] = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
 	else if ($type=="GoldDiggerFemale") {
-		$user = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+		$GoldDiggerFemaleArray[i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 	}
 	//Save the user to the array
