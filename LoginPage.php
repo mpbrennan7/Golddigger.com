@@ -7,11 +7,11 @@
 ?>
 <html> <!-- HTML Document -->
 <head> <!-- HTML HEAD -->
-  <title>Gold Digger</title> <!-- Title of Page -->
+  <title></title> <!-- Title of Page -->
   <link rel="stylesheet" href="PageStyles.css"> <!-- Include CSS -->
 </head> <!-- Close HTML HEAD -->
 <body> <!-- HTML Body -->
-<h1>Gold Digger</h1> <!-- H1 for text -->
+<h1></h1> <!-- H1 for text -->
 <?php
 
 	/*class USER{//simple user class for logging in
