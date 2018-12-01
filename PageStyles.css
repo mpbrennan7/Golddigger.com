@@ -18,7 +18,7 @@ h1 {
 p,tr {
     font-family: verdana;
 	font-weight: bold;
-    font-size: 30px;
+    font-size: 36px;
 		text-shadow:
         0.05em 0 white,
         0 0.05em white,
@@ -26,10 +26,10 @@ p,tr {
         0 -0.05em white;
 }
 
-td,input,button{
+td,input,button,label{
     font-family: verdana;
 	font-weight: bold;
-    font-size: 30px;
+    font-size: 26px;
 		text-shadow:
         0.05em 0 white,
         0 0.05em white,

@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<h1>Please fill out the information below</h1>
-		<form action="registration.php" method = "post">
+		<form action="CreateAccount.php" method = "post">
 		
 
 		<table border="0">
@@ -39,6 +39,10 @@
 			</tr>
 			
 		</table>
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 12ecde7e047e827aefbd42eb1aa51e5eae9353ea
 			<p>Which type of user are you?</p>
 			<select name="UserType">
 				<option value="SugarDaddy">Sugar Daddy</option>
@@ -51,64 +55,43 @@
 			<br />
 			<br />
 			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" value="Lower Class" checked = "checked"/>$0-$50,000
-			<input type="radio" name="Income" value="Middle Class" /> $51,000-$200,000
-			<input type="radio" name="Income" value="Upper Class"/>$200,000-$ 500,000
-			<input type="radio" name="Income" value="Fat Stackz"/>Fat Stackz
+			<input type="radio" name="Income" id="lc" value="0" checked = "checked"/><label for="lc">$0-$50,000</label>
+			<input type="radio" name="Income" id="mc" value="1" /><label for="mc">$51,000-$200,000</label>
+			<input type="radio" name="Income" id="uc" value="2"/><label for="uc">$200,000-$500,000</label>
+			<input type="radio" name="Income" id="fs" value="3"/><label for="fs">Fat Stackz</label>
 			<br />
 			<br />
 			
 			
-			<table border="0">
-				<tr>
-					<td width="150"></td>
-					<td width="150" bgcolor="gray";>New Account Credentials</td>
-				</tr>
-				<tr>
-					<td>Name</td>
-					<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Email</td>
-					<td align="left"><input type="text" name="email" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Phone Number</td>
-					<td align="left"><input type="text" name="phoneNum" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Age</td>
-					<td align="left"><input type="text" name="age" size="30" maxlength="100" required="required"></td>
-				</tr>
-				<tr>
-					<td>Zip Code</td>
-					<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
-				</tr>
-				
 			</table>
 			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+
+
+			</table>
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+
+			</table>
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+
 			<div style ="width: 50%; float:left;">
 			<p>Hair color?</p>
+			<input type="radio" name="hair" id="White" value="White" required checked = "checked"/><label for="White">White</label>
+			<input type="radio" name="hair" id="Brown" value="Brown" checked = "checked"/><label for="Brown">Brown</label>
+			<input type="radio" name="hair" id="Black" value="Black" /><label for="Black">Black</label>
+			<input type="radio" name="hair" id="Blonde" value="Blonde"/><label for="Blonde">Blonde</label>
+			<input type="radio" name="hair" id="Red" value="Red"/><label for="Red">Red</label>
+			
+			</div>
+		
+			<!--
+			<div style ="width: 50%; float:left;">
+			<p>Preferred hair color?</p>
 			<input type="radio" name="hair" value="White" required checked = "checked"/>White
 			<input type="radio" name="hair" value="Brown" checked = "checked"/>Brown
 			<input type="radio" name="hair" value="Black" />Black
 			<input type="radio" name="hair" value="Blonde"/>Blonde
 			<input type="radio" name="hair" value="Red"/>Red
-			
-			</div>
-		
-			<div style ="width: 50%; float:left;">
-			<p>Preferred hair color?</p>
-			<input type="radio" name="eye" value="White" required checked = "checked"/>White
-			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown
-			<input type="radio" name="eye" value="Black" />Black
-			<input type="radio" name="eye" value="Blonde"/>Blonde
-			<input type="radio" name="eye" value="Red"/>Red
-			</div>	
+			</div>	-->
 			
 			<div style ="width: 50%; float:left;">
 			<p>Your eye color:</p>
@@ -130,14 +113,14 @@
 			
 			<div style = "width: 50%; float:left;">
 			<p>Cats or dogs?</p>
-			<input type="radio" name="catsdogs" value="cats" required checked = "checked"/>Cats
-			<input type="radio" name="catsdogs" value="dogs" checked = "checked"/>Dogs
+			<input type="radio" name="catsdogs" value="1" required checked = "checked"/>Cats
+			<input type="radio" name="catsdogs" value="0" checked = "checked"/>Dogs
 			</div>
 			
 			<div style = "width: 50%; float:right;">
 			<p>Religious?</p>
-			<input type="radio" name="religious" value="yes" required checked = "checked"/>yes
-			<input type="radio" name="religious" value="no" checked = "checked"/>no
+			<input type="radio" name="religious" value="1" required checked = "checked"/>yes
+			<input type="radio" name="religious" value="0" checked = "checked"/>no
 			</div>
 			<br />
 			<br />
@@ -145,13 +128,13 @@
 			<br />
 			<div style = "width: 50%; float:left;">
 			<p>Rural or Urban?</p>
-			<input type="radio" name="ruralurban" value="rural" required checked = "checked"/>Rural
-			<input type="radio" name="ruralurban" value="urban" checked = "checked"/>Urban
+			<input type="radio" name="ruralurban" value="1" required checked = "checked"/>Rural
+			<input type="radio" name="ruralurban" value="0" checked = "checked"/>Urban
 			</div>
 			<div style = "width: 50%; float:right;">
 			<p>Can you cook?</p>
-			<input type="radio" name="cook" value="yes" required checked = "checked"/>yes
-			<input type="radio" name="cook" value="no" checked = "checked"/>no
+			<input type="radio" name="cook" value="1" required checked = "checked"/>yes
+			<input type="radio" name="cook" value="0" checked = "checked"/>no
 			</div>
 			<br />
 			<br />
@@ -159,13 +142,13 @@
 			<br />
 			<div style = "width: 50%; float:left;">
 			<p>Beach vacation or ski getaway?</p>
-			<input type="radio" name="beachski" value="beach" required checked = "checked"/>Beach
-			<input type="radio" name="beachski" value="ski" checked = "checked"/>Ski
+			<input type="radio" name="beachski" value="1" required checked = "checked"/>Beach
+			<input type="radio" name="beachski" value="0" checked = "checked"/>Ski
 			</div>
 			<div style = "width: 50%; float:right;">
 			<p>Introvert or Extrovert?</p>
-			<input type="radio" name="introextro" value="introvert" required checked = "checked"/>Introvert
-			<input type="radio" name="introextro" value="extrovert" checked = "checked"/>Extrovert
+			<input type="radio" name="introextro" value="1" required checked = "checked"/>Introvert
+			<input type="radio" name="introextro" value="0" checked = "checked"/>Extrovert
 			</div>
 			<br />
 			<br />
