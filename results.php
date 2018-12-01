@@ -1,5 +1,5 @@
 <?php
-
+require_once ('class_structure.php');
 session_start();
 $ss_curr_user = $_SESSION['curr_user'];
 
@@ -164,16 +164,8 @@ if($result ->num_rows >0){
 		//Counter
 		$i = $i + 1;
 		
-		
-		
 	}
 	
-}
-foreach($SugarDaddyArray as $daddy){
-	echo daddy -> getName();
-}	
-foreach($GoldDiggerMaleArray as $gdm){
-	echo gdm -> getName();
 }
 
 
