@@ -5,7 +5,7 @@ session_start();
 #need some sort of session data/current account data
 
 	$server = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
-	$username = "username";
+	$username = "root";
 	$password = "password";
 	$dbname = "golddigger";
 	$port = 3306;
