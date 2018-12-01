@@ -160,8 +160,6 @@ if($result ->num_rows >0){
 			$GoldDiggerFemaleArray[$i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		}
-		//Save the user to the array
-		
 		
 		//Counter
 		$i = $i + 1;
@@ -178,15 +176,70 @@ foreach($GoldDiggerMaleArray as $gdm){
 	echo $gdm -> getName();
 }
 */
-
+//
 if($ss_curr_user->getType_() == "SugarDaddy"){
 	foreach($GoldDiggerFemaleArray as $thot) {
+		//Compares the age of the GoldDiggerFemale to the SugarDaddy
 		if ($ss_curr_user->getAge()-$thot->getAge()>30){
-			$thot->setScore($thot->getScore()+50)
+			$thot->setScore($thot->getScore()+50);
 		}
 		else if ($ss_curr_user->getAge()-$thot->getAge()>=20 && $ss_curr_user->getAge()-$thot->getAge()<=30){
-			$thot->setScore($thot->getScore()+10)
+			$thot->setScore($thot->getScore()+10);
 		}
+		//Assigns points based on the income of GoldDiggerFemale
+		if ($thot->getIncome() ==0) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		else if ($thot->getIncome() ==1) {
+			$thot->setScore($thot->getScore()+30);
+		}
+		else if ($thot->getIncome() ==2) {
+			$thot->setScore($thot->getScore()+10);
+		}
+		else if ($thot->getIncome() ==3) {
+			$thot->setScore($thot->getScore()+0);
+		}
+		//Assign points based on Gold Digger Female being a cat or dog person
+		if ($thot->getCatOrDog() == $ss_curr_user->getCatOrDog()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		else if ($thot->getCatOrDog() != $ss_curr_user->getCatOrDog()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on hair color 
+		if ($thot->getHairColor== "Blond"){
+			$thot->setScore($thot->getScore()+50);
+		}
+		else if ($thot->getHairColor()=="Brown") {
+			$thot->setScore($thot->getScore()+40);
+		}
+		else if ($thot->getHairColor()=="Red") {
+			$thot->setScore($thot->getScore()+30);
+		}
+		else if ($thot->getHairColor()=="Black") {
+			$thot->setScore($thot->getScore()+20);
+		}
+		else if ($thot->getHairColor()=="White") {
+			$thot->setScore($thot->getScore()-50);
+		}
+		//Assign points based on Eye Color 
+		if ($thot->getEyeColor()=="Blue") {
+			$thot->setScore($thot->getScore()+50);
+		}
+		else if ($thot->getEyeColor()=="Hazel") {
+			$thot->setScore($thot->getScore()+30);
+		}
+		else if ($thot->getEyeColor()=="Green") {
+			$thot->setScore($thot->getScore()+20);
+		}
+		else if ($thot->getEyeColor()=="Brown") {
+			$thot->setScore($thot->getScore()+10);
+		}
+		else if ($thot->getEyeColor()=="Red") {
+			$thot->setScore($thot->getScore()-20);
+		}
+		//Assign points based on height
+		
 		
 	}
 }
