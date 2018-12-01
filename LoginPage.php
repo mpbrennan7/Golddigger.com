@@ -14,7 +14,7 @@
 <h1>Gold Digger</h1> <!-- H1 for text -->
 <?php
 
-	class USER{//simple user class for logging in
+	/*class USER{//simple user class for logging in
 	    public $email = "";//email variable
         public $password = "";//password variable
 	
@@ -22,8 +22,8 @@
 		$this->email = $email;//assign email
 		$this->password = $password;//assign password
 	}
-	}
-
+	}*/
+	require_once("class_structure.php");
 	$dbhost = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";//cloud DB host
 	$dbuser = "root";//DB user
 	$dbpass = "password";//DB password
@@ -32,9 +32,11 @@
 	$user = '';
 	$passwd = "";
 
+	$curr_user;	
+	
 	$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);//attempt a connection to the DB and print error on fail
 	
-	$sql = "SELECT * FROM Users WHERE name='$email' AND pword='$password'";//get user data back
+	$sql = "SELECT * FROM Users WHERE email='$email' AND pword='$password'";//get user data back
 	
 	$user_array = array();//make a user array for holding user objects
 	 
@@ -52,21 +54,18 @@
 		$output = $user_array[$i];//assign output to the object in the user array
 
 	};
-	
-	
-	$options = ['cost' => 7];//hashing options
-		$phash = password_hash('test', PASSWORD_BCRYPT, $options)."\n";//BCRYPT password hash
 		
-		
-	$sql = "SELECT pword FROM Users WHERE user='$email'";//Selecting password from the user table
+	$sql = "SELECT pword FROM Users WHERE email='$email'";//Selecting password from the user table
 	$result = $conn->query($sql);//get result
 
+	
+	
 	$passhash;//passhash will hold the hash password from DB
 		
 	if ($result->num_rows > 0) {//check the result holds data
 		// output data of each row
 		while($row = $result->fetch_assoc()) {//loop through all row results
-		$passhash = $row["password"];//assign hashed password to passhash
+		$passhash = $row["pword"];//assign hashed password to passhash
 		}
 	} else {//no result
 		echo "<p>The account and password credentials do not match!  Returning back to login screen in 5 seconds.</p>";//state credentials do not match 
@@ -77,99 +76,31 @@
 	//echo $passhash.'<br/>';
 		
 	$passhash = substr( $passhash, 0, 60 );//make sure hash is trimmed to right length
-		
+	
 	if(password_verify($password, $passhash)){//verify the password
 		
-		$allinfo = "SELECT * FROM Users WHERE user='$email'";//Selecting password from the user table
+		$allinfo = "SELECT * FROM Users WHERE email='$email'";//Selecting password from the user table
 		//$allresult = $conn->query($allinfo);//get result
 		
 		$curruserarray = array();//make a user array for holding user objects
 	 
 		if($currresult = $conn->query($allinfo)){//obtain the result
 
-		$curr_user;
+			
 		
-		while($currobj = $currresult->fetch_object()){
-			$curr_user = new User($currobj->name, $currobj->password, $currobj->email, $currobj->zip);//make new user objects
-			$curruserarray[] = $temp_user;//assign the array to the user object
-		}
-		
-		  function __construct($nm,$p,$a,$e,$z,$i,$pn,$t,$nc,$hc,$ec,$h,$cod,$r,$c,$bos,$ioe,$g,$rs,$ay,$hor,$lf,$fc,$ss){
-	$name = $nm;
-	$pword = $p;
-	$age = $a;
-	$email = $e;
-	$zip = $z;
-	$income = $i;
-	$phoneNum = $pn;
-	$type = $t;
-	$numCars = $nc;
-	$hairColor = $hc;
-	$eyeColor = $ec;
-	$height = $h;
-	$catOrDog = $cod;
-	$religious = $r;
-	$cook = $c;
-	$beachOrSki = $bos;
-	$introvertOrExtrovert = $ioe;
-	$genre = $g;
-	$relationshipStatus = $rs;
-	$aboutYourself = $ay;
-	$horoscope = $h;
-	$lookingFor = $lf;
-	$favoriteCereal = $fc;
-	$shoeSize = $ss;
-	$score = 0;
-  }
-		
-		if ($allresult->num_rows > 0) {//check the result holds data
-			// output data of each row
-			while($allrow = $result->fetch_assoc()) {//loop through all row results
-				$db_name = $allrow["name"];;
-				$db_age = $allrow["age";
-				$db_email = $allrow["email"];
-				$db_zip = $allrow["zip"];
-				$db_income = $allrow["income"];
-				$db_phoneNum = $allrow["phoneNum"];
-				$db_type = $allrow["type"];
-				$db_numCars = $allrow["numCars"];
-				$db_hairColor = $allrow["hairColor"];
-				$db_eyeColor = $allrow["eyeColor"];
-				$db_height = $allrow["height"];
-				$db_catOrDog = $allrow["catOrDog"];
-				$db_religious = $allrow["religious"];
-				$db_ruralOrUrban = $allrow["ruralOrUrban"];
-				$db_cook = $allrow["cook"];
-				$db_beachOrSki = $allrow["beachOrSki"];
-				$db_introvertOrExtrovert = $allrow["introvertOrExtrovert"];
-				$db_genre = $allrow["genre"];
-				$db_relationshipStatus = $allrow["relationshipStatus"];
-				$db_aboutYourself = $allrow["aboutYourself"];
-				$db_horoscope = $allrow["horoscope"];
-				$db_lookingFor = $allrow["lookingFor"];
-				$db_favorite_Cereal = $allrow["favoriteCereal"];
-				$db_shoeSize = $allrow["shoeSize"];
+			while($currobj = $currresult->fetch_object()){
+				//echo "here";
+				$curr_user = new User($currobj->name, $currobj->pword, $currobj->age, $currobj->email, $currobj->zip, $currobj->income, $currobj->phoneNum, $currobj->type, $currobj->hairColor, $currobj->eyeColor, $currobj->height, $currobj->catOrDog, $currobj->religious, $currobj->cook, $currobj->beachOrSki, $currobj->introvertOrExtrovert, $currobj->genre, $currobj->relationshipStatus, $currobj->aboutYourself, $currobj->horoscope, $currobj->lookingFor, $currobj->favoriteCereal, $currobj->shoeSize);//make new user objects
+				//$curruserarray[] = $temp_user;//assign the array to the user object
+				//echo $currobj->name;
 			}
 		} 
 		
-		
-		
 		echo 'Valid';//tell user password is valid
-		require('class_structure.php');
+		
 		session_start();//begin a PHP session_cache_expire
-		$_SESSION['email'] = $db_name;//hold email in the PHP SESSION
-		$_SESSION['age'] = $db_age;
-		$_SESSION['email'] = $db_email;
-		$_SESSION['zip'] = $db_zip;
-		$_SESSION['income'] = $db_income;
-		$_SESSION['phoneNum'] = $db_phoneNum;
-		$_SESSION['type'] = $db_type;
-		$_SESSION['numCars'] = $db_numCars;
-		$_SESSION['hairColor'] = $db_hairColor;
-		$_SESSION['eyeColor'] = $db_eyeColor;
-		$_SESSION['height'] = $db_height;
-		$_SESSION['catOrDog'] = $db_catOrDog;
-		$_SESSION['re
+		$_SESSION['curr_user'] = $curr_user;
+
 		//header('Location: orderform.php');
 		
 		
