@@ -180,7 +180,15 @@ foreach($GoldDiggerMaleArray as $gdm){
 */
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
-	
+	foreach($GoldDiggerFemaleArray as $thot) {
+		if ($ss_curr_user->getAge()-$thot->getAge()>30){
+			$thot->setScore($thot->getScore()+50)
+		}
+		else if ($ss_curr_user->getAge()-$thot->getAge()>=20 && $ss_curr_user->getAge()-$thot->getAge()<=30){
+			$thot->setScore($thot->getScore()+10)
+		}
+		
+	}
 }
 else if($ss_curr_user->getType_() == "Cougar"){
 	
