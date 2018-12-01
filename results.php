@@ -8,11 +8,11 @@ $top2email = "filler@php.com";
 $top3email = "filler@php.com";
 #need some sort of session data/current account data
 
-	$server = "fontbonne.cedmpeumguez.us-east-2.rds.amazonaws.com";
-	$username = "fontbonne";
-	$password = "fontbonne";
-	$dbname = "GlobalHack";
-	$port = 55976;
+	$server = "golddigger.cl5oeek4fomj.us-east-2.rds.amazonaws.com";
+	$username = "username";
+	$password = "password";
+	$dbname = "golddigger";
+	$port = 3306;
 
 
 $con=mysqli_connect($server,$username,$password,$dbname,$port);
@@ -22,7 +22,7 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$sql="SELECT * FROM hosts";
+$sql="SELECT * FROM users";
 $result=mysqli_query($con,$sql);
 
 // Fetch all
@@ -30,15 +30,34 @@ mysqli_fetch_all($result,MYSQLI_ASSOC);
 
 // Free result set
 //mysqli_free_result($result);
+//Variables for the results and algorithm
 $email=$_SESSION['email'];
-$sql="SELECT * FROM immigrants WHERE email='$email'";
+$sql="SELECT * FROM users WHERE email='$email'";
 $result2=$con->query($sql);
-$location;
-$pets;
-$rent;
-$req_english;
-$second_language;
-$purpose;
+$name;
+$pword;
+$age;
+$income;
+$phoneNum;
+$type;
+$zip;
+$catOrDog;
+$hairColor;
+$eyeColor;
+$height;
+$religious;
+$ruralOrUrban;
+$cook;
+$beachOrSki;
+$introvertOrExtrovert;
+$genre;
+$relationShipStatus;
+$aboutYourself;
+$horoscope;
+$lookingFor;
+$favoriteCereal;
+$shoeSize;
+
 
 //gets immigrant information
 if($result2->num_rows > 0){
@@ -62,7 +81,7 @@ $host_purpose = array();
 $host_email = array();
 $i = 0;
 
-$fname3;
+	$fname3;
 	$lname3;
 	$location3;
 	$fname2;
@@ -72,16 +91,35 @@ $fname3;
 	$lname1;
 	$location1;
 	$score = 10;
+	//Assign scores to each object
 foreach ($result as $row) {
 	// These need to be attribute names from the table case sensitive 
-	$host_location[$i]=$row['location'];
-	$host_pets[$i]=$row['pet'];
-	$host_req_english[$i]=['reg_english'];
-	$host_second_language[$i]=$row['second_lang'];
-	$host_rent[$i]=$row['rent'];
-	$host_email[$i] = $row['email'];
-	$host_purpose[$i] = $row['purpose'];
 	
+	$email[$i]=$row['email'];
+	$name[$i]=$row['name'];
+	$pword[$i]=$row['pword'];
+	$age[$i]=$row['age'];
+	$income[$i]=$row['income'];
+	$phoneNum[$i]=$row['phoneNum'];
+	$type[$i]=$row['type'];
+	$sql[$i]=$row['users'];
+	$zip[$i]=$row['zip'];
+	$catOrDog[$i]=$row['catOrDog'];
+	$hairColor[$i]=$row['hairColor'];
+	$eyeColor[$i]=$row['eyeColor'];
+	$height[$i]=$row['height'];
+	$religious[$i]=$row['religious'];
+	$ruralOrUrban[$i]=$row['ruralOrUrban'];
+	$cook[$i]=$row['cook'];
+	$beachOrSki[$i]=$row['beachOrSki'];
+	$introvertOrExtrovert[$i]=$row['introvertOrExtrovert'];
+	$genre[$i]=$row['genre'];
+	$relationShipStatus[$i]=$row['relationShipStatus'];
+	$aboutYourself[$i]=$row['aboutYourself'];
+	$horoscope[$i]=$row['horoscope'];
+	$lookingFor[$i]=$row['lookingFor'];
+	$favoriteCereal[$i]=$row['favoriteCereal'];
+	$shoeSize[$i]=$row['shoeSize'];
 	
 	if($host_location[$i] ==$location){
 		$score = $score + 10000;
