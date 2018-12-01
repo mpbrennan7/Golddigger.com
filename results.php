@@ -1,7 +1,7 @@
 <?php
 
-
-include PATH_TO_CLASS . 'class-Structure.php'
+require('class_structure.php');
+//include PATH_TO_CLASS . 'class-Structure.php'
 session_start();
 $ss_curr_user = $_SESSION['curr_user'];
 
