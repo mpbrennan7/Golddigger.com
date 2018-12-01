@@ -1,87 +1,87 @@
-<html>
-	<head>
-		<title>Forms</title>
-		<link rel="stylesheet" href="PageStyles.css">
-	</head>
-	<body>
-		<h1>Please fill out the information below</h1>
-		<form action="CreateAccount.php" method = "post">
+<html> <!-- Create an HTML Document -->
+	<head> <!-- HTML Header Tag for including basics of the page -->
+		<title>Forms</title> <!-- Title of the HTML Page -->
+		<link rel="stylesheet" href="PageStyles.css"> <!-- Include a CSS Stylesheet PageStyles.css -->
+	</head> <!-- Close off the header of the HTML Page -->
+	<body> <!-- Begin the HTML Body -->
+		<h1>Please fill out the information below</h1> <!-- Create the largest header H1 asking the user to complete the following info -->
+		<form action="CreateAccount.php" method = "post"> <!-- Create an HTML form with a POST action leading to the CreateAccount.php Script -->
 		
 
-		<table border="0">
-			<tr>
-				<td width="150"></td>
-				<td width="150" bgcolor="gray";>New Account Credentials</td>
-			</tr>
-			<tr>
-				<td>Name</td>
-				<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td align="left"><input type="text" name="email" size="30" maxlength="100" required="required"></td>
-			</tr>
-			<tr>
-				<td>Phone Number</td>
-				<td align="left"><input type="text" name="phoneNum" size="30" maxlength="100" required="required"></td>
-			</tr>
-			<tr>
-				<td>Age</td>
-				<td align="left"><input type="text" name="age" size="30" maxlength="100" required="required"></td>
-			</tr>
-			<tr>
-				<td>Zip Code</td>
-				<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td>
-			</tr>
+		<table border="0"> <!-- Create an HTML table with no border to nicely align the fields -->
+			<tr> <!-- Create a table row -->
+				<td width="150"></td> <!-- Create an empty cell -->
+				<td width="150" bgcolor="gray";>New Account Credentials</td> <!-- Create a Cell telling the user they need to enter their new account credentials -->
+			</tr> <!-- Close the table row -->
+			<tr> <!-- Create a table row -->
+				<td>Name</td> <!-- Name prompt -->
+				<td align="left"><input type= "text" name= "FullName" size = "30" maxlength = "100" required="required"></td> <!-- Input field for Full Name -->
+			</tr> <!-- Close the table row -->
+			<tr> <!-- Create a table row -->
+				<td>Password</td> <!-- Password Prompt -->
+				<td align="left"><input type="text" name="Password" size="30" maxlength="100" required="required"></td> <!-- Input field for Password -->
+			</tr> <!-- Close table row -->
+			<tr> <!-- Create table row -->
+				<td>Email</td> <!-- Email prompt -->
+				<td align="left"><input type="text" name="email" size="30" maxlength="100" required="required"></td> <!-- Input field for Email -->
+			</tr> <!-- Close table row -->
+			<tr> <!-- Create table row -->
+				<td>Phone Number</td> <!-- Phone Number Prompt -->
+				<td align="left"><input type="text" name="phoneNum" size="30" maxlength="100" required="required"></td> <!-- Input field for Phone Number -->
+			</tr> <!-- Close table row -->
+			<tr> <!-- Create table row -->
+				<td>Age</td> <!-- Age Prompt -->
+				<td align="left"><input type="text" name="age" size="30" maxlength="100" required="required"></td> <!-- Input field for Age -->
+			</tr> <!-- Close table row -->
+			<tr> <!-- Create table row -->
+				<td>Zip Code</td> <!-- Zip Code Prompt -->
+				<td align="left"><input type="text" name="zipcode" size="30" maxlength="100" required="required"></td> <!-- Input field for Zip Code -->
+			</tr> <!-- Close table row -->
 			
-		</table>
+		</table> <!-- Close table -->
 <<<<<<< HEAD
 =======
 		
 >>>>>>> 12ecde7e047e827aefbd42eb1aa51e5eae9353ea
-			<p>Which type of user are you?</p>
-			<select name="UserType">
-				<option value="SugarDaddy">Sugar Daddy</option>
-				<option value="Cougar">Cougar</option>
-				<option value="GoldDiggerMale">Gold Digger Male</option>
-				<option value="GoldDiggerFemale">Gold Digger Female</option>
-			</select>
-			<br />
-			<br />
-			<br />
-			<br />
-			<p>How much money do you make a year?</p>
-			<input type="radio" name="Income" id="lc" value="0" checked = "checked"/><label for="lc">$0-$50,000</label>
-			<input type="radio" name="Income" id="mc" value="1" /><label for="mc">$51,000-$200,000</label>
-			<input type="radio" name="Income" id="uc" value="2"/><label for="uc">$200,000-$500,000</label>
-			<input type="radio" name="Income" id="fs" value="3"/><label for="fs">Fat Stackz</label>
-			<br />
-			<br />
+			<p>Which type of user are you?</p> <!-- Paragraph Statement for asking type of user -->
+			<select name="UserType"> <!-- Drop down select box to pick an option -->
+				<option value="SugarDaddy">Sugar Daddy</option> <!-- First option is Sugar Daddy -->
+				<option value="Cougar">Cougar</option> <!-- Second option is Cougar -->
+				<option value="GoldDiggerMale">Gold Digger Male</option> <!-- Third Option is Gold Digger Male -->
+				<option value="GoldDiggerFemale">Gold Digger Female</option> <!-- Fourth Option is Gold Digger Female -->
+			</select> <!-- Close select options -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<p>How much money do you make a year?</p> <!-- Ask how much money in HTML paragraph -->
+			<input type="radio" name="Income" id="lc" value="0" checked = "checked"/><label for="lc">$0-$50,000</label> <!-- First option -->
+			<input type="radio" name="Income" id="mc" value="1" /><label for="mc">$51,000-$200,000</label> <!-- Second option -->
+			<input type="radio" name="Income" id="uc" value="2"/><label for="uc">$200,000-$500,000</label> <!-- Third option -->
+			<input type="radio" name="Income" id="fs" value="3"/><label for="fs">Fat Stackz</label> <!-- Fourth Option -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
 			
 			
-			</table>
-			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+			</table> <!-- Close table -->
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;"> <!-- Make teal border around input fields -->
 
 
-			</table>
-			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+			</table> <!-- Close table -->
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;"> <!-- Make teal border around input fields -->
 
-			</table>
-			<div id = "preferences" name = "preferences" style = "border:2px solid teal;">
+			</table> <!-- Close table -->
+			<div id = "preferences" name = "preferences" style = "border:2px solid teal;"> <!-- Make teal border around input fields -->
 
-			<div style ="width: 50%; float:left;">
-			<p>Hair color?</p>
-			<input type="radio" name="hair" id="White" value="White" required checked = "checked"/><label for="White">White</label>
-			<input type="radio" name="hair" id="Brown" value="Brown" checked = "checked"/><label for="Brown">Brown</label>
-			<input type="radio" name="hair" id="Black" value="Black" /><label for="Black">Black</label>
-			<input type="radio" name="hair" id="Blonde" value="Blonde"/><label for="Blonde">Blonde</label>
-			<input type="radio" name="hair" id="Red" value="Red"/><label for="Red">Red</label>
+			<div style ="width: 50%; float:left;"> <!-- Create div structure to align fields -->
+			<p>Hair color?</p> <!-- Ask for hair color -->
+			<input type="radio" name="hair" id="White" value="White" required checked = "checked"/><label for="White">White</label> <!-- White hair -->
+			<input type="radio" name="hair" id="Brown" value="Brown" checked = "checked"/><label for="Brown">Brown</label> <!-- Brown hair -->
+			<input type="radio" name="hair" id="Black" value="Black" /><label for="Black">Black</label> <!-- Black hair -->
+			<input type="radio" name="hair" id="Blonde" value="Blonde"/><label for="Blonde">Blonde</label> <!-- Blonde hair -->
+			<input type="radio" name="hair" id="Red" value="Red"/><label for="Red">Red</label> <!-- Red hair -->
 			
-			</div>
+			</div> <!-- Close div -->
 		
 			<!--
 			<div style ="width: 50%; float:left;">
@@ -93,157 +93,157 @@
 			<input type="radio" name="hair" value="Red"/>Red
 			</div>	-->
 			
-			<div style ="width: 50%; float:left;">
-			<p>Your eye color:</p>
-			<input type="radio" name="eye" value="Green" required checked = "checked"/>Green
-			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown
-			<input type="radio" name="eye" value="Blue" />Blue
-			<input type="radio" name="eye" value="Hazel"/>Hazel
-			<input type="radio" name="eye" value="Red"/>Red
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-			<div style = "width: 50%; float:left;">
-			<p>Your height</p>
-			<input type= "text" name= "height_feet" size = "5" maxlength = "2" required="required">feet
-			<input type= "text" name= "height_inches" size = "5" maxlength = "2" required="required">inches
-			</div>
+			<div style ="width: 50%; float:left;"> <!-- Make another div for formatting -->
+			<p>Your eye color:</p> <!-- Ask for eye color -->
+			<input type="radio" name="eye" value="Green" required checked = "checked"/>Green <!-- Green eyes -->
+			<input type="radio" name="eye" value="Brown" checked = "checked"/>Brown <!-- Brown Eyes -->
+			<input type="radio" name="eye" value="Blue" />Blue <!-- Blue Eyes -->
+			<input type="radio" name="eye" value="Hazel"/>Hazel <!-- Hazel Eyes -->
+			<input type="radio" name="eye" value="Red"/>Red <!-- Red eyes -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>Your height</p> <!-- Ask for height -->
+			<input type= "text" name= "height_feet" size = "5" maxlength = "2" required="required">feet <!-- Get height in feet -->
+			<input type= "text" name= "height_inches" size = "5" maxlength = "2" required="required">inches <!-- Get height in inches -->
+			</div> <!-- Close div -->
 			
-			<div style = "width: 50%; float:left;">
-			<p>Cats or dogs?</p>
-			<input type="radio" name="catsdogs" value="1" required checked = "checked"/>Cats
-			<input type="radio" name="catsdogs" value="0" checked = "checked"/>Dogs
-			</div>
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>Cats or dogs?</p> <!-- Ask if person likes cats or dogs -->
+			<input type="radio" name="catsdogs" value="1" required checked = "checked"/>Cats <!-- Cats option -->
+			<input type="radio" name="catsdogs" value="0" checked = "checked"/>Dogs <!-- Dogs option -->
+			</div> <!-- Close div -->
 			
-			<div style = "width: 50%; float:right;">
-			<p>Religious?</p>
-			<input type="radio" name="religious" value="1" required checked = "checked"/>yes
-			<input type="radio" name="religious" value="0" checked = "checked"/>no
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-			<div style = "width: 50%; float:left;">
-			<p>Rural or Urban?</p>
-			<input type="radio" name="ruralurban" value="1" required checked = "checked"/>Rural
-			<input type="radio" name="ruralurban" value="0" checked = "checked"/>Urban
-			</div>
-			<div style = "width: 50%; float:right;">
-			<p>Can you cook?</p>
-			<input type="radio" name="cook" value="1" required checked = "checked"/>yes
-			<input type="radio" name="cook" value="0" checked = "checked"/>no
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-			<div style = "width: 50%; float:left;">
-			<p>Beach vacation or ski getaway?</p>
-			<input type="radio" name="beachski" value="1" required checked = "checked"/>Beach
-			<input type="radio" name="beachski" value="0" checked = "checked"/>Ski
-			</div>
-			<div style = "width: 50%; float:right;">
-			<p>Introvert or Extrovert?</p>
-			<input type="radio" name="introextro" value="1" required checked = "checked"/>Introvert
-			<input type="radio" name="introextro" value="0" checked = "checked"/>Extrovert
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Religious?</p> <!-- Ask if Religious -->
+			<input type="radio" name="religious" value="1" required checked = "checked"/>yes <!-- Yes for religious -->
+			<input type="radio" name="religious" value="0" checked = "checked"/>no <!-- No for religious -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>Rural or Urban?</p> <!-- Ask if Rural or Urban -->
+			<input type="radio" name="ruralurban" value="1" required checked = "checked"/>Rural <!-- Rural Option -->
+			<input type="radio" name="ruralurban" value="0" checked = "checked"/>Urban <!-- Urban Option -->
+			</div> <!-- Close div -->
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Can you cook?</p> <!-- Ask if user can cook -->
+			<input type="radio" name="cook" value="1" required checked = "checked"/>yes <!-- Yes for cooking -->
+			<input type="radio" name="cook" value="0" checked = "checked"/>no <!-- No for cooking -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<div style = "width: 50%; float:left;"><!--Make new div for formatting -->
+			<p>Beach vacation or ski getaway?</p> <!-- Ask beach or ski -->
+			<input type="radio" name="beachski" value="1" required checked = "checked"/>Beach <!-- Beach option -->
+			<input type="radio" name="beachski" value="0" checked = "checked"/>Ski <!-- Ski option -->
+			</div> <!-- Close div -->
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Introvert or Extrovert?</p> <!-- Ask introvert or extrovert -->
+			<input type="radio" name="introextro" value="1" required checked = "checked"/>Introvert <!-- Introvert option -->
+			<input type="radio" name="introextro" value="0" checked = "checked"/>Extrovert <!-- Extrovert option -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
 			
-			<div style = "width: 50%; float:left;">
-			<p>Genre of music?</p>
-			<select name="genre">
-				<option value="Country">Country</option>
-				<option value="Rap">Rap</option>
-				<option value="Rock">Rock</option>
-				<option value="Soul">Soul</option>
-			</select>
-			</div>
-			<div style = "width: 50%; float:right;">
-			<p>Relationship status?</p>
-			<select name="relationship">
-				<option value="single">Single</option>
-				<option value="looking">Looking around</option>
-				<option value="complicated">It's complicated</option>
-			</select>
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
-			<div style = "width: 50%; float:left;">
-			<p>About yourself</p>
-			<textarea name= "aboutyourself" rows = "4" cols = "30" maxlength = "280" required="required"> </textarea>
-			</div>
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>Genre of music?</p> <!-- Ask for genre of music -->
+			<select name="genre"> <!-- Select option for music genre -->
+				<option value="Country">Country</option> <!-- Country option -->
+				<option value="Rap">Rap</option> <!-- Rap option -->
+				<option value="Rock">Rock</option> <!-- Rock option -->
+				<option value="Soul">Soul</option> <!-- Soul option -->
+			</select> <!-- Close select -->
+			</div> <!-- Close div -->
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Relationship status?</p> <!-- Ask for relationship status -->
+			<select name="relationship"> <!-- Select option for relationship -->
+				<option value="single">Single</option> <!-- Single option -->
+				<option value="looking">Looking around</option> <!-- Looking around option -->
+				<option value="complicated">It's complicated</option> <!-- Complicated option -->
+			</select> <!-- Close select -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>About yourself</p> <!-- Ask about yourself -->
+			<textarea name= "aboutyourself" rows = "4" cols = "30" maxlength = "280" required="required"> </textarea> <!-- Give user some space to describe themselves -->
+			</div> <!-- Close div -->
 			
-			<div style = "width: 50%; float:right;">
-			<p>Horoscope?</p>
-			<select name="horoscope">
-				<option value="aries">Aries (Mar 20- Apr 20)</option>
-				<option value="taurus">Taurus (Apr 20- May 21)</option>
-				<option value="gemini">Gemini (May 21- Jun 21)</option>
-				<option value="cancer">Cancer (Jun 21- Jul 23)</option>
-				<option value="leo">Leo (Jul 23- Aug 23)</option>
-				<option value="virgo">Virgo (Aug 23- Sep 23)</option>
-				<option value="libra">Libra (Sep 23- Oct 23)</option>
-				<option value="scorpio">Scorpio (Oct 23- Nov 22)</option>
-				<option value="sagittarius">Sagittarius (Nov 22- Dec 22)</option>
-				<option value="capricorn">Capricorn (Dec 22- Jan 20)</option>
-				<option value="aquarius">Aquarius (Jan 20- Feb 18)</option>
-				<option value="aries">Pisces (Feb 18- Mar 20)</option>
-			</select>
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Horoscope?</p> <!-- Ask horoscope -->
+			<select name="horoscope"> <!-- Pick a horoscope -->
+				<option value="aries">Aries (Mar 20- Apr 20)</option> <!-- Aries option -->
+				<option value="taurus">Taurus (Apr 20- May 21)</option> <!-- Taurus option -->
+				<option value="gemini">Gemini (May 21- Jun 21)</option> <!-- Gemini option -->
+				<option value="cancer">Cancer (Jun 21- Jul 23)</option> <!-- Cancer option -->
+				<option value="leo">Leo (Jul 23- Aug 23)</option> <!-- Leo option -->
+				<option value="virgo">Virgo (Aug 23- Sep 23)</option> <!-- Virgo option -->
+				<option value="libra">Libra (Sep 23- Oct 23)</option> <!-- Libra option -->
+				<option value="scorpio">Scorpio (Oct 23- Nov 22)</option> <!-- Scorpio option -->
+				<option value="sagittarius">Sagittarius (Nov 22- Dec 22)</option> <!-- Sagittarius option -->
+				<option value="capricorn">Capricorn (Dec 22- Jan 20)</option> <!-- Capricorn option -->
+				<option value="aquarius">Aquarius (Jan 20- Feb 18)</option> <!-- Aquarius option -->
+				<option value="aries">Pisces (Feb 18- Mar 20)</option> <!-- Pisces option -->
+			</select> <!-- Close select -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
 			
 			
-			<p>Who are you looking for?</p>
-			<select name="lookingfor">
-				<option value="SugarDaddy">Sugar Daddy</option>
-				<option value="Cougar">Cougar</option>
-				<option value="GoldDiggerMale">Gold Digger Male</option>
-				<option value="GoldDiggerFemale">Gold Digger Female</option>
-			</select>
+			<p>Who are you looking for?</p> <!-- Ask who user is looking for -->
+			<select name="lookingfor"> <!-- Select box for who user is looking for -->
+				<option value="SugarDaddy">Sugar Daddy</option> <!-- Looking for Sugar Daddy -->
+				<option value="Cougar">Cougar</option> <!-- Looking for Cougar -->
+				<option value="GoldDiggerMale">Gold Digger Male</option> <!-- Looking for Gold Digger Male -->
+				<option value="GoldDiggerFemale">Gold Digger Female</option> <!-- Looking for Gold Digger Female -->
+			</select> <!-- Close select -->
 			
-			<br />
-			<br />
-			<br />
-			<br />
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
 			
-			<div style = "width: 50%; float:left;">
-			<p>Favorite cereal?</p>
-			<input type= "text" name= "cereal" size = "20" maxlength = "100" required="required">
-			</div>
-			<div style = "width: 50%; float:right;">
-			<p>Shoe size?</p>
-			<select name="shoe">
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14+</option>
-			</select>
-			</div>
-			<br />
-			<br />
-			<br />
-			<br />
+			<div style = "width: 50%; float:left;"> <!-- Make new div for formatting -->
+			<p>Favorite cereal?</p> <!-- Ask for favorite cereal -->
+			<input type= "text" name= "cereal" size = "20" maxlength = "100" required="required"> <!-- User enters favorite cereal -->
+			</div> <!-- Close div -->
+			<div style = "width: 50%; float:right;"> <!-- Make new div for formatting -->
+			<p>Shoe size?</p> <!-- Ask for shoe size -->
+			<select name="shoe"> <!-- Select option for shoe size -->
+				<option value="5">5</option> <!-- Size 5 -->
+				<option value="6">6</option> <!-- Size 6 -->
+				<option value="7">7</option> <!-- Size 7 -->
+				<option value="8">8</option> <!-- Size 8 -->
+				<option value="9">9</option> <!-- Size 9 -->
+				<option value="10">10</option> <!-- Size 10 -->
+				<option value="11">11</option> <!-- Size 11 -->
+				<option value="12">12</option> <!-- Size 12 -->
+				<option value="13">13</option> <!-- Size 13 -->
+				<option value="14">14+</option> <!-- Size 14+ -->
+			</select> <!-- Close select -->
+			</div> <!-- Close div -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
+			<br /> <!-- Provide break space -->
 			
-			<input type="submit" name="Submit" value="Submit"/>
-		</form>
+			<input type="submit" name="Submit" value="Submit"/> <!-- Input button for submitting data -->
+		</form> <!-- close form -->
 
 		
-	</body>
-</html>
+	</body> <!-- End HTML body -->
+</html> <!-- End HTML code -->
