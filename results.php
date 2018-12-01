@@ -171,13 +171,27 @@ if($result ->num_rows >0){
 	}
 	
 }
-foreach($SugarDaddyArray as $daddy){
+/*foreach($SugarDaddyArray as $daddy){
 	echo $daddy -> getName();
 }	
 foreach($GoldDiggerMaleArray as $gdm){
 	echo $gdm -> getName();
 }
+*/
 
+if($ss_curr_user->getType_() == "SugarDaddy"){
+	
+}
+else if($ss_curr_user->getType_() == "Cougar"){
+	
+	
+}
+else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
+	
+}
+else if(echo $ss_curr_user->getType_() == "GoldDiggerMale"){
+	
+}
 
 
 	
