@@ -17,7 +17,7 @@ if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
- $sql="SELECT * FROM users";
+$sql="SELECT * FROM Users";
 
 
  
@@ -29,8 +29,8 @@ mysqli_fetch_all($result,MYSQLI_ASSOC);
 // Free result set
 //mysqli_free_result($result);
 //Variables for the results and algorithm
-$email=$_SESSION['email'];
-$sql="SELECT * FROM users";
+//$current_user = $_SESSION['FIX_THIS_LATER'];//fix this
+
 $name;
 $pword;
 $age;
@@ -62,99 +62,69 @@ $GoldDiggerMaleArray = array();
 
 //gets user information
 //Takes stuff from sql query and assigns them to a variable 
-
-foreach ($result as $row) {
-	// These need to be attribute names from the table case sensitive 
-	
-	$email=$row['email'];
-	$name=$row['name'];
-	$pword=$row['pword'];
-	$age=$row['age'];
-	$income=$row['income'];
-	$phoneNum=$row['phoneNum'];
-	$type=$row['type'];
-	$sql=$row['users'];
-	$zip=$row['zip'];
-	$catOrDog=$row['catOrDog'];
-	$hairColor=$row['hairColor'];
-	$eyeColor=$row['eyeColor'];
-	$height=$row['height'];
-	$religious=$row['religious'];
-	$ruralOrUrban=$row['ruralOrUrban'];
-	$cook=$row['cook'];
-	$beachOrSki=$row['beachOrSki'];
-	$introvertOrExtrovert=$row['introvertOrExtrovert'];
-	$genre=$row['genre'];
-	$relationShipStatus=$row['relationShipStatus'];
-	$aboutYourself=$row['aboutYourself'];
-	$horoscope=$row['horoscope'];
-	$lookingFor=$row['lookingFor'];
-	$favoriteCereal=$row['favoriteCereal'];
-	$shoeSize=$row['shoeSize'];
-	//Create object
-	$user;
-	if ($type == "SugarDaddy") {
-		$SugarDaddyArray[i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
-					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+if($result ->num_rows >0){
+	$i= 0;
+	foreach ($result as $row) {
+		// These need to be attribute names from the table case sensitive 
+		
+		$email=$row['email'];
+		$name=$row['name'];
+		$pword=$row['pword'];
+		$age=$row['age'];
+		$income=$row['income'];
+		$phoneNum=$row['phoneNum'];
+		$type=$row['type'];
+		$zip=$row['zip'];
+		$catOrDog=$row['catOrDog'];
+		$hairColor=$row['hairColor'];
+		$eyeColor=$row['eyeColor'];
+		$height=$row['height'];
+		$religious=$row['religious'];
+		$ruralOrUrban=$row['ruralOrUrban'];
+		$cook=$row['cook'];
+		$beachOrSki=$row['beachOrSki'];
+		$introvertOrExtrovert=$row['introvertOrExtrovert'];
+		$genre=$row['genre'];
+		$relationshipStatus=$row['relationShipStatus'];
+		$aboutYourself=$row['aboutYourself'];
+		$horoscope=$row['horoscope'];
+		$lookingFor=$row['lookingFor'];
+		$favoriteCereal=$row['favoriteCereal'];
+		$shoeSize=$row['shoeSize'];
+		//Create object
+		$user;
+		if ($type == "SugarDaddy") {
+			$SugarDaddyArray[i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+			
+		}
+		else if ($type == "Cougar") {
+			$CougarArray[i] = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+		}
+		else if ($type=="GoldDiggerMale") {
+			$GoldDiggerMaleArray[i] = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+		}
+		else if ($type=="GoldDiggerFemale") {
+			$GoldDiggerFemaleArray[i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
+						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
+		}
+		//Save the user to the array
+		$userArray[i] = $user;
+		echo $userArray[i];
+		//Counter
+		$i = $i + 1;
 		
 	}
-	else if ($type == "Cougar") {
-		$CougarArray[i] = new Cougar($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
-					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
-	}
-	else if ($type=="GoldDiggerMale") {
-		$GoldDiggerMaleArray[i] = new GoldDiggerM($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
-					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
-	}
-	else if ($type=="GoldDiggerFemale") {
-		$GoldDiggerFemaleArray[i] = new GoldDiggerF($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$numCars,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
-					$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
-	}
-	//Save the user to the array
-	$userArray[i] = $user;
-	echo $userArray[i];
-	//Counter
-	$i = $i + 1;
-	
-
-
-
-	
-	
-	$sql="SELECT * FROM hosts WHERE email= '$top1email'";
-	$result3=$con->query($sql);
-	if($result3->num_rows > 0){
-		while($row = $result3->fetch_assoc()){
-			$location1 = $row['location'];
-			$fname1 = $row['fname'];
-			$lname1 = $row['lname'];
-		}
-	}
-	
-	$sql="SELECT * FROM hosts WHERE email= '$top2email'";
-	$result4=$con->query($sql);
-	if($result4->num_rows > 0){
-		while($row = $result4->fetch_assoc()){
-			$location2 = $row['location'];
-			$fname2 = $row['fname'];
-			$lname2 = $row['lname'];
-		}
-	}
-	
-	$sql="SELECT * FROM hosts WHERE email= '$top3email'";
-	$result5=$con->query($sql);
-	if($result5->num_rows > 0){
-		while($row = $result5->fetch_assoc()){
-			$location3 = $row['location'];
-			$fname3 = $row['fname'];
-			$lname3 = $row['lname'];
-		}
-	}
-	
-	
-	
 }
 
+	
+
+	
+	
+
+/*
 	echo "<div class=\"header\">Recommended Connections: </div>
 		<div class=\"row\">
 			<div class=\"column\">
@@ -185,7 +155,7 @@ foreach ($result as $row) {
 				</div>
 			</div>
 		</div>";
-		
+		*/
 	mysqli_close($con);
 ?>
 
