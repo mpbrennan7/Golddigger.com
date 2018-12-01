@@ -1,5 +1,5 @@
 <?php
-require_once ('class_structure.php');
+
 session_start();
 
 #need some sort of session data/current account data
@@ -124,6 +124,9 @@ if($result ->num_rows >0){
 foreach($SugarDaddyArray as $daddy){
 	echo daddy -> getName();
 }	
+foreach($GoldDiggerMaleArray as $gdm){
+	echo gdm -> getName();
+}
 
 
 
