@@ -10,7 +10,6 @@
   $phoneNum = $_POST['phoneNum'];//get POST variable and store it in a short variable name
   $type = $_POST['UserType'];//get POST variable and store it in a short variable name
   //$numCars = $_POST[];//get POST variable and store it in a short variable name
-  $numCars = 2;
   $hairColor = $_POST['hair'];//get POST variable and store it in a short variable name
   $eyeColor = $_POST['eye'];//get POST variable and store it in a short variable name
   $height = $_POST['height_feet'];//get POST variable and store it in a short variable name
@@ -102,7 +101,7 @@
 	$phash = password_hash($password, PASSWORD_BCRYPT, $options)."\n";//Prepare hash
 		
 	//Create INSERT statement
-	$sql = "INSERT INTO Users (name, pword, age, email, zip, income, phoneNum, type, numCars, hairColor, eyeColor, height, catOrDog, religious, ruralOrUrban, cook, beachOrSki, introvertOrExtrovert, genre, relationshipStatus, aboutYourself, horoscope, lookingFor, favoriteCereal, shoeSize) VALUES('$fullname', '$phash', $age, '$email', $zipcode, $income, $phoneNum, '$type', $numCars, '$hairColor', '$eyeColor', $height, $catOrDog, $religious, $ruralOrUrban, $cook, $beachOrSki, $introvertOrExtrovert, '$genre', '$relationshipStatus', '$aboutYourself', '$horoscope', '$lookingFor', '$favoriteCereal', $shoeSize)";
+	$sql = "INSERT INTO Users (name, pword, age, email, zip, income, phoneNum, type,hairColor, eyeColor, height, catOrDog, religious, ruralOrUrban, cook, beachOrSki, introvertOrExtrovert, genre, relationshipStatus, aboutYourself, horoscope, lookingFor, favoriteCereal, shoeSize) VALUES('$fullname', '$phash', $age, '$email', $zipcode, $income, $phoneNum, '$type','$hairColor', '$eyeColor', $height, $catOrDog, $religious, $ruralOrUrban, $cook, $beachOrSki, $introvertOrExtrovert, '$genre', '$relationshipStatus', '$aboutYourself', '$horoscope', '$lookingFor', '$favoriteCereal', $shoeSize)";
 		
 	//If query is successful then a record has been inserted to the DB	
 	if ($conn->query($sql) === TRUE) {

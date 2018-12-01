@@ -48,7 +48,7 @@ $cook;
 $beachOrSki;
 $introvertOrExtrovert;
 $genre;
-$relationShipStatus;
+$relationshipStatus;
 $aboutYourself;
 $horoscope;
 $lookingFor;
@@ -59,11 +59,11 @@ $CougarArray = array();
 $GoldDiggerFemaleArray = array();
 $GoldDiggerMaleArray = array();
 
-
+$i= 0;
 //gets user information
 //Takes stuff from sql query and assigns them to a variable 
 if($result ->num_rows >0){
-	$i= 0;
+	
 	foreach ($result as $row) {
 		// These need to be attribute names from the table case sensitive 
 		
@@ -85,7 +85,7 @@ if($result ->num_rows >0){
 		$beachOrSki=$row['beachOrSki'];
 		$introvertOrExtrovert=$row['introvertOrExtrovert'];
 		$genre=$row['genre'];
-		$relationshipStatus=$row['relationShipStatus'];
+		$relationshipStatus=$row['relationshipStatus'];
 		$aboutYourself=$row['aboutYourself'];
 		$horoscope=$row['horoscope'];
 		$lookingFor=$row['lookingFor'];
@@ -111,8 +111,8 @@ if($result ->num_rows >0){
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
 		}
 		//Save the user to the array
-		$userArray[i] = $user;
-		echo $userArray[i];
+		
+		
 		//Counter
 		$i = $i + 1;
 		

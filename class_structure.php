@@ -10,7 +10,7 @@ class User {
   private $income;
   private $phoneNum;
   private $type;
-  private $numCars;
+  
   private $hairColor;
   private $eyeColor;
   private $height;
@@ -31,7 +31,7 @@ class User {
   
   
  
-  function __construct($nm,$p,$a,$e,$z,$i,$pn,$t,$nc,$hc,$ec,$h,$cod,$r,$c,$bos,$ioe,$g,$rs,$ay,$hor,$lf,$fc,$ss){
+  function __construct($nm,$p,$a,$e,$z,$i,$pn,$t,$hc,$ec,$h,$cod,$r,$c,$bos,$ioe,$g,$rs,$ay,$hor,$lf,$fc,$ss){
 	$name = $nm;
 	$pword = $p;
 	$age = $a;
@@ -40,7 +40,6 @@ class User {
 	$income = $i;
 	$phoneNum = $pn;
 	$type = $t;
-	$numCars = $nc;
 	$hairColor = $hc;
 	$eyeColor = $ec;
 	$height = $h;
@@ -82,9 +81,6 @@ class User {
   }
   public function getType_(){
 	  return  $type;
-  }
-  public function getNumCars(){
-	  return  $numCars;
   }
   public function getHairColor(){
 	  return  $hairColor;
