@@ -10,7 +10,7 @@ class User {
   private $income;
   private $phoneNum;
   private $type;
-  
+  private $numCars;
   private $hairColor;
   private $eyeColor;
   private $height;
@@ -32,103 +32,110 @@ class User {
   
  
   function __construct($nm,$p,$a,$e,$z,$i,$pn,$t,$hc,$ec,$h,$cod,$r,$c,$bos,$ioe,$g,$rs,$ay,$hor,$lf,$fc,$ss){
-	$name = $nm;
-	$pword = $p;
-	$age = $a;
-	$email = $e;
-	$zip = $z;
-	$income = $i;
-	$phoneNum = $pn;
-	$type = $t;
-	$hairColor = $hc;
-	$eyeColor = $ec;
-	$height = $h;
-	$catOrDog = $cod;
-	$religious = $r;
-	$cook = $c;
-	$beachOrSki = $bos;
-	$introvertOrExtrovert = $ioe;
-	$genre = $g;
-	$relationshipStatus = $rs;
-	$aboutYourself = $ay;
-	$horoscope = $h;
-	$lookingFor = $lf;
-	$favoriteCereal = $fc;
-	$shoeSize = $ss;
-	$score = 0;
+	$this->name = $nm;
+	$this->pword = $p;
+	$this->age = $a;
+	$this->email = $e;
+	$this->zip = $z;
+	$this->income = $i;
+	$this->phoneNum = $pn;
+	$this->type = $t;
+	//$numCars = $nc;
+	$this->hairColor = $hc;
+	$this->eyeColor = $ec;
+	$this->height = $h;
+	$this->catOrDog = $cod;
+	$this->religious = $r;
+	$this->cook = $c;
+	$this->beachOrSki = $bos;
+	$this->introvertOrExtrovert = $ioe;
+	$this->genre = $g;
+	$this->relationshipStatus = $rs;
+	$this->aboutYourself = $ay;
+	$this->horoscope = $h;
+	$this->lookingFor = $lf;
+	$this->favoriteCereal = $fc;
+	$this->shoeSize = $ss;
+	$this->score = 0;
+	
+	//echo "HERE";
+	
   }
   
   public function getName(){
-	  return $name;
+	  return $this->name;
   }
   public function getPword(){
-	  return  $pword;
+	  return  $this->pword;
   }
   public function getAge(){
-	  return  $age;
+	  return  $this->age;
   }
   public function getEmail(){
-	  return  $email;
+	  return  $this->email;
   }
   public function getZip(){
-	  return  $zip;
+	  return  $this->zip;
   }
   public function getIncome(){
-	  return  $income;
+	  return  $this->income;
   }
   public function getPhoneNum(){
-	  return  $phoneNum;
+	  return  $this->phoneNum;
   }
   public function getType_(){
-	  return  $type;
+	  return  $this->type;
+  }
+  public function getNumCars(){
+	  return  $this->numCars;
   }
   public function getHairColor(){
-	  return  $hairColor;
+	  return  $this->hairColor;
   }
   public function getEyeColor(){
-	  return  $eyeColor;
+	  return  $this->eyeColor;
   }
   public function getHeight(){
-	  return  $height;
+	  return  $this->height;
   }
   public function getCatOrDog(){
-	  return  $catOrDog;
+	  return  $this->catOrDog;
   }
   public function getReligious(){
-	  return  $religious;
+	  return  $this->religious;
   }
   public function getCook(){
-	  return  $cook;
+	  return  $this->cook;
   }  
   public function getBeachOrSki(){
-	  return  $beachOrSki;
+	  return  $this->beachOrSki;
   }
   public function getIntrovertOrExtrovert(){
-	  return  $introvertOrExtrovert;
+	  return  $this->introvertOrExtrovert;
   }
   public function getGenre(){
-	  return  $genre;
+	  return  $this->genre;
   }
   public function getRelationshipStatus(){
-	  return  $relationshipStatus;
+	  return  $this->relationshipStatus;
   }
   public function getAboutYourself(){
-	  return  $aboutYourself;
+	  return  $this->aboutYourself;
   }
   public function getHoroscope(){
-	  return  $horoscope;
+	  return  $this->horoscope;
   }
   public function getLookingFor(){
-	  return  $lookingFor;
+	  return  $this->lookingFor;
   }
   public function getFavoriteCereal(){
-	  return  $favoriteCereal;
+	  return  $this->favoriteCereal;
   }
   public function getShoeSize(){
-	  return  $shoeSize;
+	  return  $this->shoeSize;
   }
   public function getScore(){
-	  return  $score;
+	  return  $this->score;
   }
   public function setScore($scr){
 	  $score = $scr;
