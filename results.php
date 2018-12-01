@@ -172,10 +172,10 @@ if($result ->num_rows >0){
 	
 }
 foreach($SugarDaddyArray as $daddy){
-	echo daddy -> getName();
+	echo $daddy -> getName();
 }	
 foreach($GoldDiggerMaleArray as $gdm){
-	echo gdm -> getName();
+	echo $gdm -> getName();
 }
 
 
