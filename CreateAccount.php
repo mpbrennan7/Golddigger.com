@@ -12,7 +12,7 @@
   //$numCars = $_POST[];//get POST variable and store it in a short variable name
   $hairColor = $_POST['hair'];//get POST variable and store it in a short variable name
   $eyeColor = $_POST['eye'];//get POST variable and store it in a short variable name
-  $height = $_POST['height_feet'];//get POST variable and store it in a short variable name
+  $height = $_POST['height_feet']*12 + $_POST['height_inches'];//get POST variable and store it in a short variable name
   $catOrDog = $_POST['catsdogs'];//get POST variable and store it in a short variable name
   $religious = $_POST['religious'];//get POST variable and store it in a short variable name
   $ruralOrUrban = $_POST['ruralurban'];//get POST variable and store it in a short variable name

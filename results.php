@@ -178,27 +178,87 @@ foreach($GoldDiggerMaleArray as $gdm){
 	echo $gdm -> getName();
 }
 */
-
+$apikey = "se4wSwtmJV8JCvLWIhLPvKjUlgdRDhifDdwHOJKuu7JQ0MZkPzIZlNkFN4x19IUM";
+$zip1 = $ss_curr_user->getZip();
 if($ss_curr_user->getType_() == "SugarDaddy"){
 	foreach($GoldDiggerFemaleArray as $thot) {
+		$zip2 = $thot->getZip();
+		$url = "https://www.zipcodeapi.com/rest/".$apikey."/distance.json/".$zip1."/".$zip2."/miles";
+		$curl = curl_init($url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($curl);
+		$decode = json_decode($result, true);
+		$distvar = $decode["distance"];
+		echo $distvar;//for testing
+		if($distvar <= 20){
+			$thot->setScore($thot->getScore()+800);
+		}
+		else if($distvar >20 && $distvar <= 100){
+			$thot->setScore($thot->getScore()+600);
+		}
 		if ($ss_curr_user->getAge()-$thot->getAge()>30){
-			$thot->setScore($thot->getScore()+50)
+			$thot->setScore($thot->getScore()+50);
 		}
 		else if ($ss_curr_user->getAge()-$thot->getAge()>=20 && $ss_curr_user->getAge()-$thot->getAge()<=30){
-			$thot->setScore($thot->getScore()+10)
+			$thot->setScore($thot->getScore()+10);
 		}
 		
 	}
 }
 else if($ss_curr_user->getType_() == "Cougar"){
-	
+	foreach($GoldDiggerMaleArray as $golddigger) {
+		$zip2 = $golddigger->getZip();
+		$url = "https://www.zipcodeapi.com/rest/".$apikey."/distance.json/".$zip1."/".$zip2."/miles";
+		$curl = curl_init($url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($curl);
+		$decode = json_decode($result, true);
+		$distvar = $decode["distance"];
+		echo $distvar;//for testing
+		if($distvar <= 20){
+			$golddigger->setScore($golddigger->getScore()+800);
+		}
+		else if($distvar >20 && $distvar <= 100){
+			$golddigger->setScore($golddigger->getScore()+600);
+		}
+	}
 	
 }
 else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
-	
+	foreach($SugarDaddyArray as $daddy) {
+		$zip2 = $daddy->getZip();
+		$url = "https://www.zipcodeapi.com/rest/".$apikey."/distance.json/".$zip1."/".$zip2."/miles";
+		$curl = curl_init($url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($curl);
+		$decode = json_decode($result, true);
+		$distvar = $decode["distance"];
+		echo $distvar;//for testing
+		if($distvar <= 20){
+			$daddy->setScore($daddy->getScore()+800);
+		}
+		else if($distvar >20 && $distvar <= 100){
+			$daddy->setScore($daddy->getScore()+600);
+		}
+	}
 }
-else if(echo $ss_curr_user->getType_() == "GoldDiggerMale"){
-	
+else if($ss_curr_user->getType_() == "GoldDiggerMale"){
+	foreach($CougarArray as $coug) {
+		$zip2 = $coug->getZip();
+		$url = "https://www.zipcodeapi.com/rest/".$apikey."/distance.json/".$zip1."/".$zip2."/miles";
+		$curl = curl_init($url);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		$result = curl_exec($curl);
+		$decode = json_decode($result, true);
+		$distvar = $decode["distance"];
+		echo $distvar;//for testing
+		if($distvar <= 20){
+			$coug->setScore($coug->getScore()+800);
+		}
+		else if($distvar >20 && $distvar <= 100){
+			$coug->setScore($coug->getScore()+600);
+		}
+	}
 }
 
 
