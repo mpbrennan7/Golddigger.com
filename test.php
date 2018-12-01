@@ -4,7 +4,9 @@
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-require_once("$root/CIS_474/Golddigger.com/class_structure.php");
+//require_once("$root/CIS_474/Golddigger.com/class_structure.php");
+
+require_once("class_structure.php");
 
 $email = 'email';
 
@@ -39,6 +41,8 @@ $allinfo = "SELECT * FROM Users WHERE name='test'";//Selecting password from the
 			echo $curr_user->getName();
 			//echo $hold;
 			print $curr_user->getAge();
+			
+			echo $curr_user->getReligious();
 		}
 
 ?>
