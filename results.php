@@ -178,7 +178,7 @@ foreach($GoldDiggerMaleArray as $gdm){
 }
 */
 
-$apikey = "iF3M7s7kbXdGF2v3LGq6DpJ97fKXWlSKBdUtIzEs0333Ph1NY3AS6EKEcADCNqMq";
+$apikey = "D9bpgm7qTMbZ8gl0ygKJcoBEwsYiAXcrE8LDzRs1I5Nu4gQmdBYllfu9LRGn6lfM";
 $zip1 = $ss_curr_user->getZip();
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
