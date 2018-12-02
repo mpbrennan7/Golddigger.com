@@ -44,5 +44,4 @@ $allinfo = "SELECT * FROM Users WHERE name='test'";//Selecting password from the
 			
 			echo $curr_user->getReligious();
 		}
-
 ?>
