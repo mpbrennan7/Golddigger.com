@@ -384,8 +384,8 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		else if($distvar >20 && $distvar <= 100){
 			$coug->setScore($coug->getScore()+600);
 		}
-	}
-	if ($ss_curr_user->getAge()-$coug->getAge()>30){
+	
+		if ($ss_curr_user->getAge()-$coug->getAge()>30){
 			$coug->setScore($coug->getScore()+50);
 		}
 		else if ($ss_curr_user->getAge()-$coug->getAge()>=20 && $ss_curr_user->getAge()-$coug->getAge()<=30){
@@ -500,7 +500,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		if($coug-getShoeSize() < 10){
 			$coug->setScore($coug->getScore()+50);
 		}
-		
+	}	
 }
 
 
