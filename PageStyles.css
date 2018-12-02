@@ -1,6 +1,13 @@
-body {/*make a nice background */
+/*body {/*make a nice background 
     background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
 	
+}
+*/
+body {
+	background-color: #343A40;
+	background-image: url('https://images.unsplash.com/photo-1507418828307-8e909173e254?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=910581fbea7336f623a0a22bb0410cdc&auto=format&fit=crop&w=1052&q=80');
+	background-size: 100% 100%;
+
 }
 
 h1 {
@@ -36,3 +43,100 @@ td,input,button,label{
         -0.05em 0 white,
         0 -0.05em white;
 }
+textarea {  
+    font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+    width: 33%; 
+    border-collapse: 
+    collapse; border-spacing: 0; 
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img {
+	border-radius: 50%;
+}
+
+/*
+
+<style>
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 300px;
+	margin: auto;
+	text-align: center;
+	border-radius: 10%;
+	background-color: white;
+}
+.header{
+  color: black;
+	font-family: Ubuntu;
+	font-size: 5em;
+	text-align: center;
+}
+
+.title {
+	color: grey;
+	font-size: 18px;
+}
+
+
+a {
+	text-decoration: none;
+	font-size: 22px;
+	color: black;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.column {
+  float: left;
+  width: 22%;
+  padding: 5.5%;
+  margin-top: 5%;
+}
+body {
+	background-color: #343A40;
+	background-image: url('https://images.unsplash.com/photo-1507418828307-8e909173e254?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=910581fbea7336f623a0a22bb0410cdc&auto=format&fit=crop&w=1052&q=80');
+	background-size: 100% 100%;
+
+}
+img {
+	border-radius: 50%;
+}
+
+table, textarea {  
+    color: #333; /* Lighten up font color 
+    font-family: Helvetica, Arial, sans-serif; /* Nicer font 
+    width: 100%; 
+    border-collapse: 
+    collapse; border-spacing: 0; 
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+*/

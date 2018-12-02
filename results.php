@@ -1,3 +1,9 @@
+<html> <!-- Create HTML Document -->
+<head> <!-- HTML Head -->
+  <title>Results</title> <!-- Title of Web page -->
+  <!--<link rel="stylesheet" href="PageStyles.css"> <!-- Bring in stylesheet -->
+</head> <!-- Close HTML Head -->
+
 <?php
 
 require('class_structure.php');
@@ -780,74 +786,75 @@ echo "<div class=row>";
   
 $maxindex = $index + 3;
 $_SESSION['index'] = $maxindex;
+$gdfindex = 0;
+$gdmindex = 0;
+$sdindex = 0;
+$cindex = 0;
+
 
 foreach ($GoldDiggerFemaleArray as $c){
-	if($c->getScore() != 0){
+	if($c->getScore() != 0 && $index < $maxindex && $dfindex == $index){
 		echo "<div class=column>";
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
 		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
 		echo "<textarea>Score: ".$c->getScore()."</textarea>";
 		echo "</div>";
-	}	
+		echo "<br/>";
+		$index += 1;
+	}
+	$gdfindex += 1;	
 }
 
 usort($GoldDiggerMaleArray, 'sort_objects');
 
 foreach ($GoldDiggerMaleArray as $c){
-	if($c->getScore() != 0){
-		
-		echo "<div class=column>";		
+	if($c->getScore() != 0 && $index < $maxindex && $gdmindex == $index){
+		echo "<div class=column>";
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
 		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
 		echo "<textarea>Score: ".$c->getScore()."</textarea>";
 		echo "</div>";
+		echo "<br/>";
+		$index += 1;
 	}
+	$gdmindex += 1;
 }
 
 usort($SugarDaddyArray, 'sort_objects');
 
 foreach ($SugarDaddyArray as $c){
-	if($c->getScore() != 0){
-		
-		echo "<div class=column>";		
+	if($c->getScore() != 0 && $index < $maxindex && $sdindex == $index){
+		echo "<div class=column>";
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
 		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
 		echo "<textarea>Score: ".$c->getScore()."</textarea>";
 		echo "</div>";
-
+		echo "<br/>";
+		$index += 1;
 	}
+	$sdindex += 1;
 }
 
 usort($CougarArray, 'sort_objects');
 
-$pindex = 0;
+
 
 foreach ($CougarArray as $c){
-	//echo $index;
-	//echo "   ";
-	//echo $maxindex;
-	//echo "   ";
-	if($c->getScore() != 0 && $index < $maxindex && $pindex == $index){
-		
+
+	if($c->getScore() != 0 && $index < $maxindex && $cindex == $index){
 		echo "<div class=column>";
-		
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
-
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
-
 		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
-
 		echo "<textarea>Score: ".$c->getScore()."</textarea>";
-		
 		echo "</div>";
-
+		echo "<br/>";
 		$index += 1;
 	}
-	
-	$pindex += 1;
+	$cindex += 1;
 }
 
 echo "</div>";
@@ -927,6 +934,7 @@ echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enoug
 		</div>-->
 
 </html>
+
 <style>
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -955,18 +963,6 @@ a {
 	color: black;
 }
 
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.column {
-  float: left;
-  width: 22%;
-  padding: 5.5%;
-  margin-top: 5%;
-}
 body {
 	background-color: #343A40;
 	background-image: url('https://images.unsplash.com/photo-1507418828307-8e909173e254?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=910581fbea7336f623a0a22bb0410cdc&auto=format&fit=crop&w=1052&q=80');
@@ -977,35 +973,27 @@ img {
 	border-radius: 50%;
 }
 
-table, textarea {  
-    color: #333; /* Lighten up font color */
-    font-family: Helvetica, Arial, sans-serif; /* Nicer font */
-    width: 100%; 
-    border-collapse: 
-    collapse; border-spacing: 0; 
+textarea {
+	font-family: Ubuntu;
+    width: 25%;
+    height: 75px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
 }
 
-td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
+button{
+    font-family: verdana;
+	font-weight: bold;
+    font-size: 26px;
+		text-shadow:
+        0.05em 0 white,
+        0 0.05em white,
+        -0.05em 0 white,
+        0 -0.05em white;
 
-th {  
-    background: #F3F3F3; /* Light grey background */
-    font-weight: bold; /* Make sure they're bold */
-}
 
-td {  
-    background: #FAFAFA; /* Lighter grey background */
-    text-align: center; /* Center our text */
-}
-
-.column {
-    float: left;
-    width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 </style>
