@@ -552,8 +552,9 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 		else if ($daddy->getEyeColor()=="Red") {
 			$daddy->setScore($daddy->getScore()-20);
 		}
+		//Calculate height difference 
 		$heightdiff = $daddy->getHeight() - $ss_curr_user->getHeight();
-		
+		//Assign points based on height difference
 		if($heightdiff >= 12){
 			$daddy->setScore($daddy->getScore()+30);
 		}
@@ -566,42 +567,54 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 		else{
 			$daddy->setScore($daddy->getScore()-50);
 		}
+		//Assign points based on pet prefererance
 		if($daddy->getCatOrDog() == $ss_curr_user->getCatOrDog()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on religion 
 		if($daddy->getReligious() == $ss_curr_user->getReligious()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on Rural or Urban 
 		if($daddy->getRuralOrUrban() == $ss_curr_user->getRuralOrUrban()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on whether they can cook or not 
 		if($daddy->getCook() == $ss_curr_user->getReligious()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on vacation preferance 
 		if($daddy->getBeachOrSki() == $ss_curr_user->getBeachOrSki()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based socail skills 
 		if($daddy->getIntrovertOrExtrovert() == 1){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on genre of music 
 		if($daddy->getGenre() == $ss_curr_user->getGenre()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points basd on religion 
 		if($daddy->getReligious() == $ss_curr_user->getReligious()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points basd on relationship status 
 		if($daddy->getRelationshipStatus() == "Single"){
 			$daddy->setScore($daddy->getScore()+20);
 		}
 		if($daddy->getRelationshipStatus() == $ss_curr_user->getRelationshipStatus()){
 			$daddy->setScore($daddy->getScore()+30);
 		}
+		//Assign points based on horoscope 
 		if($daddy->getHoroscope() == $ss_curr_user->getHoroscope()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based favorite cereal 
 		if($daddy-getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
+		//Assign points based on shoe size 
 		if($daddy-getShoeSize() < 10){
 			$daddy->setScore($daddy->getScore()+50);
 		}
@@ -684,8 +697,10 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		else if ($coug->getEyeColor()=="Red") {
 			$coug->setScore($coug->getScore()-20);
 		}
+		//Calculates height differance 
 		$heightdiff = $coug->getHeight() - $ss_curr_user->getHeight();
 		
+		//Assign points based on height difference
 		if($heightdiff >= 12){
 			$coug->setScore($coug->getScore()-50);
 		}
@@ -698,42 +713,54 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		else{
 			$coug->setScore($coug->getScore()+10);
 		}
+		//Assign points based on Whether they are a cat or dog person
 		if($coug->getCatOrDog() == $ss_curr_user->getCatOrDog()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on if they are religious 
 		if($coug->getReligious() == $ss_curr_user->getReligious()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on if they are rural or urban 
 		if($coug->getRuralOrUrban() == $ss_curr_user->getRuralOrUrban()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on if they can cook or not
 		if($coug->getCook() == 1){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on preffered vacation
 		if($coug->getBeachOrSki() == $ss_curr_user->getBeachOrSki()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on whether they are an introvert or extrovert
 		if($coug->getIntrovertOrExtrovert() == 1){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on whether they like the same type of music 
 		if($coug->getGenre() == $ss_curr_user->getGenre()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on whether they are religious or not 
 		if($coug->getReligious() == $ss_curr_user->getReligious()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on relationship status 
 		if($coug->getRelationshipStatus() == "Single"){
 			$coug->setScore($coug->getScore()+20);
 		}
-		if($coug->getRelationshipStatus() == $ss_curr_user->getRelationshipStatus()){
+		else if($coug->getRelationshipStatus() == $ss_curr_user->getRelationshipStatus()){
 			$coug->setScore($coug->getScore()+30);
 		}
+		//Assign points based on horoscope
 		if($coug->getHoroscope() == $ss_curr_user->getHoroscope()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on favorite cereal
 		if($coug-getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
 			$coug->setScore($coug->getScore()+50);
 		}
+		//Assign points based on shoe size 
 		if($coug-getShoeSize() < 10){
 			$coug->setScore($coug->getScore()+50);
 		}
@@ -909,23 +936,6 @@ foreach ($CougarArray as $c){
 	}
 }
 echo "</table>";
-//sorting results
-/*if($ss_curr_user->getType_() == "SugarDaddy"){
-	$ss_curr_user->sortArray(&$GoldDiggerFemaleArray);	
-	
-	
-}
-else if($ss_curr_user->getType_() == "Cougar"){
-	$ss_curr_user->sortArray(&$GoldDiggerMaleArray);
-}
-else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
-	$ss_curr_user->sortArray(&$SugarDaddyArray);
-}
-else if($ss_curr_user->getType_() == "GoldDiggerMale"){
-	$ss_curr_user->sortArray(&$CougarArray);
-}*/
-	
-	
 
 /*
 	echo "<div class=\"header\">Recommended Connections: </div>
