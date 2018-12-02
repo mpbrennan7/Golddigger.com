@@ -861,6 +861,8 @@ foreach ($CougarArray as $c){
 echo "</div>";
 
 echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enough";
+echo "<form action = \"logout.php\" method = \"POST\">";
+echo "<input type=\"submit\" value=\"Logout\"/>";
 //echo "</table>";
 
 /*
