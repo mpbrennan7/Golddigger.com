@@ -145,15 +145,18 @@ class User {
   }
   public function sortArray(&$results){
 	  $j=count($results);
-	  for($k=0;$k<$j-1;$k++){
-		  for($m=0;$m<$j-$k-1;$m++){
-			  if($results[$m]->getScore() > $results[$m+1]->getScore()){
-				  $temp = $results[$m];
-				  $results[$m] = $results[$m + 1];
-				  $results[$m+1] = $temp;
+	  if($j > 0){
+		  for($k=0;$k<$j-1;$k = $k + 1){
+			  for($m=0;$m<$j-$k-1;$m = $m + 1){
+				  if($results[$m]->getScore() > $results[$m+1]->getScore()){
+					  $temp = $results[$m];
+					  $results[$m] = $results[$m + 1];
+					  $results[$m+1] = $temp;
+				  }
 			  }
 		  }
 	  }
+	  
   }
   
 }
