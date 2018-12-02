@@ -285,11 +285,46 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 		if (ss_curr_user->getReligious() == $thot->getReligious()) {
 			$thot->setScore($thot->getScore()+50);
 		}
-		else if (ss_curr_user->getReligious() != $thot->getReligious()) {
-			$thot->setScore($thot->getScore()+0);
-		}
+		
 		//Assign points based on Rural or Urban 
-		if(ss_curr_user->
+		if(ss_curr_user->getRuralOrUrban() == $thot->getRuralOrUrban()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on cook
+		if(ss_curr_user->getCook() == $thot->getCook()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on Beach or Ski
+		if(ss_curr_user->getBeachOrSki() == $thot->getBeachOrSki()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on Introvert or extrovert
+		if ($thot->getIntrovertOrExtrovert == 1) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on Genre of music likes
+		if(ss_curr_user->getGenre() == $thot->getGenre()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on Relationship status 
+		if(ss_curr_user->getRelationshipStatus() == $thot->getRelationshipStatus()) {
+			$thot->setScore($thot->getScore()+20);
+		}
+		else if ($thot->getRelationshipStatus() == "single") {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on Horoscope
+		if(ss_curr_user->getHoroscope() == $thot->getHoroscope()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on favorite cereal 
+		if(ss_curr_user->getFavoriteCereal() == $thot->getFavoriteCereal()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		//Assign points based on shoe size 
+		if($thot->getShoeSize() < 10) {
+			$thot->setScore($thot->getScore()+50);
+		}
 		
 	}
 }
