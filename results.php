@@ -366,6 +366,118 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 		else if($distvar >20 && $distvar <= 100){
 			$daddy->setScore($daddy->getScore()+600);
 		}
+		if ($ss_curr_user->getAge()-$daddy->getAge()< -30 ){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		else if ($ss_curr_user->getAge()-$daddy->getAge()<=-20 && $ss_curr_user->getAge()-$daddy->getAge()>=-30){
+			$daddy->setScore($daddy->getScore()+10);
+
+		}
+		//Assigns points based on the income of GoldDiggerFemale
+		if ($daddy->getIncome() ==0) {
+			$daddy->setScore($daddy->getScore()+0);
+		}
+		else if ($daddy->getIncome() ==1) {
+			$daddy->setScore($daddy->getScore()+10);
+		}
+		else if ($daddy->getIncome() ==2) {
+			$daddy->setScore($daddy->getScore()+30);
+		}
+		else if ($daddy->getIncome() ==3) {
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		//Assign points based on Gold Digger Female being a cat or dog person
+		if ($daddy->getCatOrDog() == $ss_curr_user->getCatOrDog()) {
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		else if ($daddy->getCatOrDog() != $ss_curr_user->getCatOrDog()) {
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		//Assign points based on hair color 
+		if ($daddy->getHairColor== "Black"){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		else if ($daddy->getHairColor()=="Brown") {
+			$daddy->setScore($daddy->getScore()+40);
+		}
+		else if ($daddy->getHairColor()=="Red") {
+			$daddy->setScore($daddy->getScore()+30);
+		}
+		else if ($daddy->getHairColor()=="Blonde") {
+			$daddy->setScore($daddy->getScore()+20);
+		}
+		else if ($daddy->getHairColor()=="White") {
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		//Assign points based on Eye Color 
+		if ($daddy->getEyeColor()=="Blue") {
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		else if ($daddy->getEyeColor()=="Hazel") {
+			$daddy->setScore($daddy->getScore()+30);
+		}
+		else if ($daddy->getEyeColor()=="Green") {
+			$daddy->setScore($daddy->getScore()+20);
+		}
+		else if ($daddy->getEyeColor()=="Brown") {
+			$daddy->setScore($daddy->getScore()+10);
+		}
+		else if ($daddy->getEyeColor()=="Red") {
+			$daddy->setScore($daddy->getScore()-20);
+		}
+		$heightdiff = $daddy->getHeight() - $ss_curr_user->getHeight();
+		
+		if($heightdiff >= 12){
+			$daddy->setScore($daddy->getScore()+30);
+		}
+		else if ($heightdiff > 0 && $heightdiff < 12){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		else if ($heightdiff > -12 && $heightdiff <=0){
+			$daddy->setScore($daddy->getScore()-30);
+		}
+		else{
+			$daddy->setScore($daddy->getScore()-50);
+		}
+		if($daddy->getCatOrDog() == $ss_curr_user->getCatOrDog()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getReligious() == $ss_curr_user->getReligious()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getRuralOrUrban() == $ss_curr_user->getRuralOrUrban()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getCook() == $ss_curr_user->getReligious()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getBeachOrSki() == $ss_curr_user->getBeachOrSki()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getIntrovertOrExtrovert() == 1){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getGenre() == $ss_curr_user->getGenre()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getReligious() == $ss_curr_user->getReligious()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy->getRelationshipStatus() == "Single"){
+			$daddy->setScore($daddy->getScore()+20);
+		}
+		if($daddy->getRelationshipStatus() == $ss_curr_user->getRelationshipStatus()){
+			$daddy->setScore($daddy->getScore()+30);
+		}
+		if($daddy->getHoroscope() == $ss_curr_user->getHoroscope()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy-getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
+			$daddy->setScore($daddy->getScore()+50);
+		}
+		if($daddy-getShoeSize() < 10){
+			$daddy->setScore($daddy->getScore()+50);
+		}
 	}
 }
 else if($ss_curr_user->getType_() == "GoldDiggerMale"){
@@ -385,10 +497,10 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 			$coug->setScore($coug->getScore()+600);
 		}
 	
-		if ($ss_curr_user->getAge()-$coug->getAge()>30){
+		if ($coug->getAge() - $ss_curr_user->getAge()>15){
 			$coug->setScore($coug->getScore()+50);
 		}
-		else if ($ss_curr_user->getAge()-$coug->getAge()>=20 && $ss_curr_user->getAge()-$coug->getAge()<=30){
+		else if ($ss_curr_user->getAge()-$coug->getAge()>=10 && $ss_curr_user->getAge()-$coug->getAge()<=15){
 			$coug->setScore($coug->getScore()+10);
 
 		}
@@ -467,10 +579,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		if($coug->getRuralOrUrban() == $ss_curr_user->getRuralOrUrban()){
 			$coug->setScore($coug->getScore()+50);
 		}
-		if($coug->getReligious() == 1){
-			$coug->setScore($coug->getScore()+50);
-		}
-		if($coug->getCook() == $ss_curr_user->getReligious()){
+		if($coug->getCook() == 1){
 			$coug->setScore($coug->getScore()+50);
 		}
 		if($coug->getBeachOrSki() == $ss_curr_user->getBeachOrSki()){
