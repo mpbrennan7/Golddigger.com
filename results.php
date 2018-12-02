@@ -266,7 +266,7 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 			$thot->setScore($thot->getScore()+10);
 		}
 		///If the Gold Digger Female is greater than 1 and less than 1.5 feet shorter than the Sugar Daddy
-		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 18 && ss_curr_user->getHeight() - $thot->getHeight() > 12) {
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 18 && $ss_curr_user->getHeight() - $thot->getHeight() > 12) {
 			$thot->setScore($thot->getScore()+30);
 		}
 		///If the Gold Digger Female is greater than .5 and less than 1 feet shorter than the Sugar Daddy
