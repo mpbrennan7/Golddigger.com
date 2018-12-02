@@ -189,7 +189,7 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 		$result = curl_exec($curl);
 		$decode = json_decode($result, true);
 		$distvar = $decode["distance"];
-		echo $distvar;//for testing
+		//echo $distvar;//for testing
 		if($distvar <= 20){
 			$thot->setScore($thot->getScore()+800);
 		}
@@ -225,7 +225,7 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on hair color 
-		if ($thot->getHairColor== "Blond"){
+		if ($thot->getHairColor()== "Blond"){
 			$thot->setScore($thot->getScore()+50);
 		}
 		else if ($thot->getHairColor()=="Brown") {
@@ -270,55 +270,55 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 			$thot->setScore($thot->getScore()+30);
 		}
 		///If the Gold Digger Female is greater than .5 and less than 1 feet shorter than the Sugar Daddy
-		else if (ss_curr_user->getHeight() - $thot->getHeight() < 12 && ss_curr_user->getHeight() - $thot->getHeight() > 6) {
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 12 && $ss_curr_user->getHeight() - $thot->getHeight() > 6) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		///If the Gold Digger Female is greater than 0 and less than .5 feet shorter than the Sugar Daddy
-		else if (ss_curr_user->getHeight() - $thot->getHeight() < 6 && ss_curr_user->getHeight() - $thot->getHeight() > 0) {
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 6 && $ss_curr_user->getHeight() - $thot->getHeight() > 0) {
 			$thot->setScore($thot->getScore()+40);
 		}
 		///If the Gold Digger Female is less than 0 feet taller than the Sugar Daddy
-		else if (ss_curr_user->getHeight() - $thot->getHeight() < 0) {
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 0) {
 			$thot->setScore($thot->getScore()-50);
 		}
 		//Assign points based on religious
-		if (ss_curr_user->getReligious() == $thot->getReligious()) {
+		if ($ss_curr_user->getReligious() == $thot->getReligious()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		
 		//Assign points based on Rural or Urban 
-		if(ss_curr_user->getRuralOrUrban() == $thot->getRuralOrUrban()) {
+		if($ss_curr_user->getRuralOrUrban() == $thot->getRuralOrUrban()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on cook
-		if(ss_curr_user->getCook() == $thot->getCook()) {
+		if($ss_curr_user->getCook() == $thot->getCook()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on Beach or Ski
-		if(ss_curr_user->getBeachOrSki() == $thot->getBeachOrSki()) {
+		if($ss_curr_user->getBeachOrSki() == $thot->getBeachOrSki()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on Introvert or extrovert
-		if ($thot->getIntrovertOrExtrovert == 1) {
+		if ($thot->getIntrovertOrExtrovert() == 1) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on Genre of music likes
-		if(ss_curr_user->getGenre() == $thot->getGenre()) {
+		if($ss_curr_user->getGenre() == $thot->getGenre()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on Relationship status 
-		if(ss_curr_user->getRelationshipStatus() == $thot->getRelationshipStatus()) {
+		if($ss_curr_user->getRelationshipStatus() == $thot->getRelationshipStatus()) {
 			$thot->setScore($thot->getScore()+20);
 		}
 		else if ($thot->getRelationshipStatus() == "single") {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on Horoscope
-		if(ss_curr_user->getHoroscope() == $thot->getHoroscope()) {
+		if($ss_curr_user->getHoroscope() == $thot->getHoroscope()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on favorite cereal 
-		if(ss_curr_user->getFavoriteCereal() == $thot->getFavoriteCereal()) {
+		if($ss_curr_user->getFavoriteCereal() == $thot->getFavoriteCereal()) {
 			$thot->setScore($thot->getScore()+50);
 		}
 		//Assign points based on shoe size 
@@ -340,7 +340,7 @@ else if($ss_curr_user->getType_() == "Cougar"){
 		$result = curl_exec($curl);
 		$decode = json_decode($result, true);
 		$distvar = $decode["distance"];
-		echo $distvar;//for testing
+		//echo $distvar;//for testing
 		if($distvar <= 20){
 			$golddigger->setScore($golddigger->getScore()+800);
 		}
@@ -351,7 +351,7 @@ else if($ss_curr_user->getType_() == "Cougar"){
 		if ($ss_curr_user->getAge()-$golddigger->getAge()>30){
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
-		else if ($ss_curr_user->getAge()-$->getAge()>=20 && $ss_curr_user->getAge()-$golddigger->getAge()<=30){
+		else if ($ss_curr_user->getAge()-$golddigger->getAge()>=20 && $ss_curr_user->getAge()-$golddigger->getAge()<=30){
 			$golddigger->setScore($golddigger->getScore()+10);
 
 		}
@@ -414,36 +414,36 @@ else if($ss_curr_user->getType_() == "Cougar"){
 			$golddigger->setScore($golddigger->getScore()+10);
 		}
 		///If the Gold Digger male is greater than 1 and less than 1.5 feet taller than the Cougar
-		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()  < 18 && $golddigger->getHeight() -  ss_curr_user->getHeight()  > 12) {
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()  < 18 && $golddigger->getHeight() -  $ss_curr_user->getHeight()  > 12) {
 			$golddigger->setScore($golddigger->getScore()+30);
 		}
 		///If the Gold Digger male is greater than .5 and less than 1 feet taller than the Cougar
-		else if ($golddigger->getHeight() - ss_curr_user->getHeight()  < 12 &&$golddigger->getHeight() - ss_curr_user->getHeight()  > 6) {
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()  < 12 &&$golddigger->getHeight() - $ss_curr_user->getHeight()  > 6) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		///If the Gold Digger male is greater than 0 and less than .5 feet taller than the Cougar
-		else if ($golddigger->getHeight() - ss_curr_user->getHeight()< 6 && $golddigger->getHeight() - ss_curr_user->getHeight() > 0) {
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()< 6 && $golddigger->getHeight() - $ss_curr_user->getHeight() > 0) {
 			$golddigger->setScore($golddigger->getScore()+40);
 		}
 		///If the Gold Digger male is less than 0 feet taller than the Cougar
-		else if ($golddigger->getHeight() - ss_curr_user->getHeight() < 0) {
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight() < 0) {
 			$golddigger->setScore($golddigger->getScore()-50);
 		}
 		//Assign points based on religious
-		if (ss_curr_user->getReligious() == $golddigger->getReligious()) {
+		if ($ss_curr_user->getReligious() == $golddigger->getReligious()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		
 		//Assign points based on Rural or Urban 
-		if(ss_curr_user->getRuralOrUrban() == $golddigger->getRuralOrUrban()) {
+		if($ss_curr_user->getRuralOrUrban() == $golddigger->getRuralOrUrban()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on cook
-		if(ss_curr_user->getCook() == $golddigger->getCook()) {
+		if($ss_curr_user->getCook() == $golddigger->getCook()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Beach or Ski
-		if(ss_curr_user->getBeachOrSki() == $golddigger->getBeachOrSki()) {
+		if($ss_curr_user->getBeachOrSki() == $golddigger->getBeachOrSki()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Introvert or extrovert
@@ -451,22 +451,22 @@ else if($ss_curr_user->getType_() == "Cougar"){
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Genre of music likes
-		if(ss_curr_user->getGenre() == $golddigger->getGenre()) {
+		if($ss_curr_user->getGenre() == $golddigger->getGenre()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Relationship status 
-		if(ss_curr_user->getRelationshipStatus() == $golddigger->getRelationshipStatus()) {
+		if($ss_curr_user->getRelationshipStatus() == $golddigger->getRelationshipStatus()) {
 			$golddigger->setScore($golddigger->getScore()+20);
 		}
 		else if ($golddigger->getRelationshipStatus() == "single") {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Horoscope
-		if(ss_curr_user->getHoroscope() == $golddigger->getHoroscope()) {
+		if($ss_curr_user->getHoroscope() == $golddigger->getHoroscope()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on favorite cereal 
-		if(ss_curr_user->getFavoriteCereal() == $golddigger->getFavoriteCereal()) {
+		if($ss_curr_user->getFavoriteCereal() == $golddigger->getFavoriteCereal()) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on shoe size 
@@ -485,7 +485,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 		$result = curl_exec($curl);
 		$decode = json_decode($result, true);
 		$distvar = $decode["distance"];
-		echo $distvar;//for testing
+		//echo $distvar;//for testing
 		if($distvar <= 20){
 			$daddy->setScore($daddy->getScore()+800);
 		}
@@ -615,7 +615,8 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 		$result = curl_exec($curl);
 		$decode = json_decode($result, true);
 		$distvar = $decode["distance"];
-		echo $distvar;//for testing
+		//echo $distvar;//for testing
+		
 		if($distvar <= 20){
 			$coug->setScore($coug->getScore()+800);
 		}
