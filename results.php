@@ -752,7 +752,7 @@ echo "<br/>";
 
 function sort_objects($a, $b) {
 	if($a->getScore() == $b->getScore()){ return 0 ; }
-	return ($a->getScore() < $b->getScore()) ? -1 : 1;
+	return ($a->getScore() > $b->getScore()) ? -1 : 1;
 }
 
 usort($GoldDiggerFemaleArray, 'sort_objects');
