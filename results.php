@@ -613,6 +613,21 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 }
 
 
+//sorting results
+if($ss_curr_user->getType_() == "SugarDaddy"){
+	$ss_curr_user->sortArray(&$GoldDiggerFemaleArray);	
+	
+	
+}
+else if($ss_curr_user->getType_() == "Cougar"){
+	$ss_curr_user->sortArray(&$GoldDiggerMaleArray);
+}
+else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
+	$ss_curr_user->sortArray(&$SugarDaddyArray);
+}
+else if($ss_curr_user->getType_() == "GoldDiggerMale"){
+	$ss_curr_user->sortArray(&$CougarArray);
+}
 	
 	
 

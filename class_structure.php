@@ -143,6 +143,18 @@ class User {
   public function setScore($scr){
 	  $score = $scr;
   }
+  public function sortArray(&$results){
+	  $j=count($results);
+	  for(!k=0;k<$j-1;$k++){
+		  for($m=0;$m<$j-$k-1;$m++){
+			  if($results[$m]->getScore() > $results[$m+1]->getScore()){
+				  $temp = $results[$m];
+				  $results[$m] = $results[$m + 1];
+				  $results[$m+1] = $temp;
+			  }
+		  }
+	  }
+  }
   
 }
 
