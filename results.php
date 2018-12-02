@@ -666,7 +666,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 			$coug->setScore($coug->getScore()+50);
 		}
 		//Assign points based on hair color 
-		if ($coug->getHairColor== "Blond"){
+		if ($coug->getHairColor()== "Blond"){
 			$coug->setScore($coug->getScore()+50);
 		}
 		else if ($coug->getHairColor()=="Brown") {
@@ -757,7 +757,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 			$coug->setScore($coug->getScore()+50);
 		}
 		//Assign points based on favorite cereal
-		if($coug-getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
+		if($coug->getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
 			$coug->setScore($coug->getScore()+50);
 		}
 		//Assign points based on shoe size 
