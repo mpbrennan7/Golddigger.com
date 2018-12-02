@@ -347,6 +347,132 @@ else if($ss_curr_user->getType_() == "Cougar"){
 		else if($distvar >20 && $distvar <= 100){
 			$golddigger->setScore($golddigger->getScore()+600);
 		}
+		//Compares the age of the GoldDiggerFemale to the SugarDaddy
+		if ($ss_curr_user->getAge()-$golddigger->getAge()>30){
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		else if ($ss_curr_user->getAge()-$->getAge()>=20 && $ss_curr_user->getAge()-$golddigger->getAge()<=30){
+			$golddigger->setScore($golddigger->getScore()+10);
+
+		}
+		//Assigns points based on the income of GoldDiggerMale
+		if ($golddigger->getIncome() ==0) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		else if ($golddigger->getIncome() ==1) {
+			$golddigger->setScore($golddigger->getScore()+30);
+		}
+		else if ($golddigger->getIncome() ==2) {
+			$golddigger->setScore($golddigger->getScore()+10);
+		}
+		else if ($golddigger->getIncome() ==3) {
+			$golddigger->setScore($golddigger->getScore()+0);
+		}
+		//Assign points based on Gold Digger Male being a cat or dog person
+		if ($golddigger->getCatOrDog() == $ss_curr_user->getCatOrDog()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on hair color 
+		if ($golddigger->getHairColor== "Blond"){
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		else if ($golddigger->getHairColor()=="Brown") {
+			$golddigger->setScore($golddigger->getScore()+40);
+		}
+		else if ($golddigger->getHairColor()=="Red") {
+			$golddigger->setScore($golddigger->getScore()+30);
+		}
+		else if ($golddigger->getHairColor()=="Black") {
+			$golddigger->setScore($golddigger->getScore()+20);
+		}
+		else if ($golddigger->getHairColor()=="White") {
+			$golddigger->setScore($golddigger->getScore()-50);
+		}
+		//Assign points based on Eye Color 
+		if ($golddigger->getEyeColor()=="Brown") {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		else if ($golddigger->getEyeColor()=="Hazel") {
+			$golddigger->setScore($golddigger->getScore()+30);
+		}
+		else if ($golddigger->getEyeColor()=="Green") {
+			$golddigger->setScore($golddigger->getScore()+20);
+		}
+		else if ($golddigger->getEyeColor()=="Blue") {
+			$golddigger->setScore($golddigger->getScore()+10);
+		}
+		else if ($golddigger->getEyeColor()=="Red") {
+			$golddigger->setScore($golddigger->getScore()-20);
+		}
+		//Assign points based on height
+		//If the Gold digger male  is greater than 2 feet taller than the Cougar
+		if ($golddigger->getHeight() - $ss_curr_user->getHeight() >=24) {
+			$golddigger->setScore($golddigger->getScore()+0);
+		}
+		///If the Gold Digger male is greater than 1.5 and less than 2 feet taller than the Cougar
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()  < 24 && $golddigger->getHeight() - $ss_curr_user->getHeight() >= 18) {
+			$golddigger->setScore($golddigger->getScore()+10);
+		}
+		///If the Gold Digger male is greater than 1 and less than 1.5 feet taller than the Cougar
+		else if ($golddigger->getHeight() - $ss_curr_user->getHeight()  < 18 && $golddigger->getHeight() -  ss_curr_user->getHeight()  > 12) {
+			$golddigger->setScore($golddigger->getScore()+30);
+		}
+		///If the Gold Digger male is greater than .5 and less than 1 feet taller than the Cougar
+		else if ($golddigger->getHeight() - ss_curr_user->getHeight()  < 12 &&$golddigger->getHeight() - ss_curr_user->getHeight()  > 6) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		///If the Gold Digger male is greater than 0 and less than .5 feet taller than the Cougar
+		else if ($golddigger->getHeight() - ss_curr_user->getHeight()< 6 && $golddigger->getHeight() - ss_curr_user->getHeight() > 0) {
+			$golddigger->setScore($golddigger->getScore()+40);
+		}
+		///If the Gold Digger male is less than 0 feet taller than the Cougar
+		else if ($golddigger->getHeight() - ss_curr_user->getHeight() < 0) {
+			$golddigger->setScore($golddigger->getScore()-50);
+		}
+		//Assign points based on religious
+		if (ss_curr_user->getReligious() == $golddigger->getReligious()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		
+		//Assign points based on Rural or Urban 
+		if(ss_curr_user->getRuralOrUrban() == $golddigger->getRuralOrUrban()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on cook
+		if(ss_curr_user->getCook() == $golddigger->getCook()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on Beach or Ski
+		if(ss_curr_user->getBeachOrSki() == $golddigger->getBeachOrSki()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on Introvert or extrovert
+		if ($golddigger->getIntrovertOrExtrovert == 1) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on Genre of music likes
+		if(ss_curr_user->getGenre() == $golddigger->getGenre()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on Relationship status 
+		if(ss_curr_user->getRelationshipStatus() == $golddigger->getRelationshipStatus()) {
+			$golddigger->setScore($golddigger->getScore()+20);
+		}
+		else if ($golddigger->getRelationshipStatus() == "single") {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on Horoscope
+		if(ss_curr_user->getHoroscope() == $golddigger->getHoroscope()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on favorite cereal 
+		if(ss_curr_user->getFavoriteCereal() == $golddigger->getFavoriteCereal()) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
+		//Assign points based on shoe size 
+		if($golddigger->getShoeSize() > 10) {
+			$golddigger->setScore($golddigger->getScore()+50);
+		}
 	}
 	
 }
