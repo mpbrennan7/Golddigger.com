@@ -5,6 +5,7 @@ require('class_structure.php');
 session_start();
 $ss_curr_user = $_SESSION['curr_user'];
 
+/*
 echo $ss_curr_user->getName();
 echo "<br/>";
 echo $ss_curr_user->getPword();
@@ -50,7 +51,7 @@ echo "<br/>";
 echo $ss_curr_user->getFavoriteCereal();
 echo "<br/>";
 echo $ss_curr_user->getShoeSize();
-
+*/
 
 #need some sort of session data/current account data
 
@@ -740,23 +741,55 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 }
 
 
+foreach ($GoldDiggerFemaleArray as $c){
+	echo $c->getScore();
+	echo "<br/>";
+	echo $c->getName();
+	echo "<br/>";
+}
+
+echo "<br/>";
+
+function sort_objects($a, $b) {
+	if($a->getScore() == $b->getScore()){ return 0 ; }
+	return ($a->getScore() < $b->getScore()) ? -1 : 1;
+}
+
+usort($GoldDiggerFemaleArray, 'sort_objects');
+
+foreach ($GoldDiggerFemaleArray as $c){
+	echo $c->getScore();
+	echo "<br/>";
+	echo $c->getName();
+	echo "<br/>";
+}
+
+echo "<br/>";
+
+usort($GoldDiggerMaleArray, 'sort_objects');
+
+foreach ($GoldDiggerMaleArray as $c){
+	echo $c->getScore();
+	echo "<br/>";
+	echo $c->getName();
+	echo "<br/>";
+}
+
 //sorting results
-if($ss_curr_user->getType_() == "SugarDaddy" && count($GoldDiggerFemaleArray) > 0){
-	$ss_curr_user->sortArray($GoldDiggerFemaleArray);	
-		
+/*if($ss_curr_user->getType_() == "SugarDaddy"){
+	$ss_curr_user->sortArray(&$GoldDiggerFemaleArray);	
+	
+	
 }
-else if($ss_curr_user->getType_() == "Cougar" && count($GoldDiggerMaleArray) > 0){
-	$ss_curr_user->sortArray($GoldDiggerMaleArray);
+else if($ss_curr_user->getType_() == "Cougar"){
+	$ss_curr_user->sortArray(&$GoldDiggerMaleArray);
 }
-else if($ss_curr_user->getType_() == "GoldDiggerFemale" && count($SugarDaddyArray) > 0){
-	$ss_curr_user->sortArray($SugarDaddyArray);
+else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
+	$ss_curr_user->sortArray(&$SugarDaddyArray);
 }
-else if($ss_curr_user->getType_() == "GoldDiggerMale" && count($CougarArray) > 0){
-	$ss_curr_user->sortArray($CougarArray);
-}
-else{
-	echo "No matches, you lonely fool";
-}
+else if($ss_curr_user->getType_() == "GoldDiggerMale"){
+	$ss_curr_user->sortArray(&$CougarArray);
+}*/
 	
 	
 
