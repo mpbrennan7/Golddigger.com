@@ -104,6 +104,9 @@ class User {
   public function getReligious(){
 	  return  $this->religious;
   }
+  public function getRuralOrUrban() {
+	  return $this->ruralOrUrban;
+  }
   public function getCook(){
 	  return  $this->cook;
   }  

@@ -257,10 +257,45 @@ if($ss_curr_user->getType_() == "SugarDaddy"){
 			$thot->setScore($thot->getScore()-20);
 		}
 		//Assign points based on height
-		
+		//If the Gold Digger Female is greater than 2 feet shorter than the Sugar Daddy
+		if ($ss_curr_user->getHeight() - $thot->getHeight() >=24) {
+			$thot->setScore($thot->getScore()+0);
+		}
+		///If the Gold Digger Female is greater than 1.5 and less than 2 feet shorter than the Sugar Daddy
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 24 && $ss_curr_user->getHeight() - $thot->getHeight() >= 18) {
+			$thot->setScore($thot->getScore()+10);
+		}
+		///If the Gold Digger Female is greater than 1 and less than 1.5 feet shorter than the Sugar Daddy
+		else if ($ss_curr_user->getHeight() - $thot->getHeight() < 18 && ss_curr_user->getHeight() - $thot->getHeight() > 12) {
+			$thot->setScore($thot->getScore()+30);
+		}
+		///If the Gold Digger Female is greater than .5 and less than 1 feet shorter than the Sugar Daddy
+		else if (ss_curr_user->getHeight() - $thot->getHeight() < 12 && ss_curr_user->getHeight() - $thot->getHeight() > 6) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		///If the Gold Digger Female is greater than 0 and less than .5 feet shorter than the Sugar Daddy
+		else if (ss_curr_user->getHeight() - $thot->getHeight() < 6 && ss_curr_user->getHeight() - $thot->getHeight() > 0) {
+			$thot->setScore($thot->getScore()+40);
+		}
+		///If the Gold Digger Female is less than 0 feet taller than the Sugar Daddy
+		else if (ss_curr_user->getHeight() - $thot->getHeight() < 0) {
+			$thot->setScore($thot->getScore()-50);
+		}
+		//Assign points based on religious
+		if (ss_curr_user->getReligious() == $thot->getReligious()) {
+			$thot->setScore($thot->getScore()+50);
+		}
+		else if (ss_curr_user->getReligious() != $thot->getReligious()) {
+			$thot->setScore($thot->getScore()+0);
+		}
+		//Assign points based on Rural or Urban 
+		if(ss_curr_user->
 		
 	}
 }
+
+
+
 else if($ss_curr_user->getType_() == "Cougar"){
 	foreach($GoldDiggerMaleArray as $golddigger) {
 		$zip2 = $golddigger->getZip();
