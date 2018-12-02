@@ -184,7 +184,7 @@ foreach($GoldDiggerMaleArray as $gdm){
 }
 */
 
-$apikey = "D9bpgm7qTMbZ8gl0ygKJcoBEwsYiAXcrE8LDzRs1I5Nu4gQmdBYllfu9LRGn6lfM";
+$apikey = "iF3M7s7kbXdGF2v3LGq6DpJ97fKXWlSKBdUtIzEs0333Ph1NY3AS6EKEcADCNqMq";
 $zip1 = $ss_curr_user->getZip();
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
@@ -845,7 +845,8 @@ usort($CougarArray, 'sort_objects');
 foreach ($CougarArray as $c){
 
 	if($c->getScore() != 0 && $index < $maxindex && $cindex == $index){
-		echo "<div class=column>";
+		echo "<div class=column id=outputmatch>";
+		echo "<img src=profile.png>";
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
 		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
@@ -971,11 +972,13 @@ body {
 }
 img {
 	border-radius: 50%;
+	width:100px;
+	height:100px;
 }
 
 textarea {
 	font-family: Ubuntu;
-    width: 25%;
+    width: 20%;
     height: 75px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -983,6 +986,8 @@ textarea {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+	border: 1px solid black;
+	font-size: 20px;
 }
 
 button{
