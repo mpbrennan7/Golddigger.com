@@ -380,7 +380,7 @@ else if($ss_curr_user->getType_() == "Cougar"){
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on hair color 
-		if ($golddigger->getHairColor== "Blond"){
+		if ($golddigger->getHairColor()== "Blond"){
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		else if ($golddigger->getHairColor()=="Brown") {
@@ -454,7 +454,7 @@ else if($ss_curr_user->getType_() == "Cougar"){
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Introvert or extrovert
-		if ($golddigger->getIntrovertOrExtrovert == 1) {
+		if ($golddigger->getIntrovertOrExtrovert() == 1) {
 			$golddigger->setScore($golddigger->getScore()+50);
 		}
 		//Assign points based on Genre of music likes
@@ -527,7 +527,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 			$daddy->setScore($daddy->getScore()+50);
 		}
 		//Assign points based on hair color 
-		if ($daddy->getHairColor== "Black"){
+		if ($daddy->getHairColor()== "Black"){
 			$daddy->setScore($daddy->getScore()+50);
 		}
 		else if ($daddy->getHairColor()=="Brown") {
@@ -617,11 +617,11 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 			$daddy->setScore($daddy->getScore()+50);
 		}
 		//Assign points based favorite cereal 
-		if($daddy-getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
+		if($daddy->getFavoriteCereal() == $ss_curr_user->getFavoriteCereal()){
 			$daddy->setScore($daddy->getScore()+50);
 		}
 		//Assign points based on shoe size 
-		if($daddy-getShoeSize() < 10){
+		if($daddy->getShoeSize() < 10){
 			$daddy->setScore($daddy->getScore()+50);
 		}
 	}
@@ -793,7 +793,7 @@ $cindex = 0;
 
 
 foreach ($GoldDiggerFemaleArray as $c){
-	if($c->getScore() != 0 && $index < $maxindex && $dfindex == $index){
+	if($c->getScore() != 0 && $index < $maxindex && $gdfindex == $index){
 		echo "<div class=column>";
 		echo "<textarea>Name: ".$c->getName()."</textarea>";
 		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
