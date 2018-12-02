@@ -740,15 +740,33 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 	}	
 }
 
+echo "<table border=1>";
+echo "<tr>";
+echo "<td width=75>Name</td>";
+echo "<td width=75>Age</td>";
+echo "<td width=75>Email</td>";
+echo "<td width=75>Zip</td>";
+echo "<td width=75>Income</td>";
+echo "<td width=75>Phone Num</td>";
+echo "<td width=75>Type</td>";
+echo "<td width=75>Hair Color</td>";
+echo "<td width=75>Eye Color</td>";
+echo "<td width=75>Height</td>";
+echo "<td width=75>Cat or Dog</td>";
+echo "<td width=75>Religious</td>";
+echo "<td width=75>Cook</td>";
+echo "<td width=75>Beach or Ski</td>";
+echo "<td width=75>Introvert or Extrovert</td>";
+echo "<td width=75>Genre</td>";
+echo "<td width=75>Relationship Status</td>";
+echo "<td width=75>About Yourself</td>";
+echo "<td width=75>Horoscope</td>";
+echo "<td width=75>Looking For</td>";
+echo "<td width=75>Favorite Cereal</td>";
+echo "<td width=75>Shoe Size</td>";
+echo "<td width=75>Score</td>";
+echo "</tr>";
 
-foreach ($GoldDiggerFemaleArray as $c){
-	echo $c->getScore();
-	echo "<br/>";
-	echo $c->getName();
-	echo "<br/>";
-}
-
-echo "<br/>";
 
 function sort_objects($a, $b) {
 	if($a->getScore() == $b->getScore()){ return 0 ; }
@@ -757,11 +775,36 @@ function sort_objects($a, $b) {
 
 usort($GoldDiggerFemaleArray, 'sort_objects');
 
+
+
 foreach ($GoldDiggerFemaleArray as $c){
-	echo $c->getScore();
-	echo "<br/>";
-	echo $c->getName();
-	echo "<br/>";
+	if($c->getScore() != 0){
+		echo "<tr>";
+		echo "<td width=75>".$c->getName()."</td>";
+		echo "<td width=75>".$c->getAge()."</td>";
+		echo "<td width=75>".$c->getEmail()."</td>";
+		echo "<td width=75>".$c->getZip()."</td>";
+		echo "<td width=75>".$c->getIncome()."</td>";
+		echo "<td width=75>".$c->getPhoneNum()."</td>";
+		echo "<td width=75>".$c->getType_()."</td>";
+		echo "<td width=75>".$c->getHairColor()."</td>";
+		echo "<td width=75>".$c->getEyeColor()."</td>";
+		echo "<td width=75>".$c->getHeight()."</td>";
+		echo "<td width=75>".$c->getCatOrDog()."</td>";
+		echo "<td width=75>".$c->getReligious()."</td>";
+		echo "<td width=75>".$c->getCook()."</td>";
+		echo "<td width=75>".$c->getBeachOrSki()."</td>";
+		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
+		echo "<td width=75>".$c->getGenre()."</td>";
+		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
+		echo "<td width=75>".$c->getAboutYourself()."</td>";
+		echo "<td width=75>".$c->getHoroscope()."</td>";
+		echo "<td width=75>".$c->getLookingFor()."</td>";
+		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
+		echo "<td width=75>".$c->getShoeSize()."</td>";
+		echo "<td width=75>".$c->getScore()."</td>";
+		echo "</tr>";
+	}	
 }
 
 echo "<br/>";
@@ -769,12 +812,103 @@ echo "<br/>";
 usort($GoldDiggerMaleArray, 'sort_objects');
 
 foreach ($GoldDiggerMaleArray as $c){
-	echo $c->getScore();
-	echo "<br/>";
-	echo $c->getName();
-	echo "<br/>";
+	if($c->getScore() != 0){
+		echo "<tr>";
+		echo "<td width=75>".$c->getName()."</td>";
+		echo "<td width=75>".$c->getAge()."</td>";
+		echo "<td width=75>".$c->getEmail()."</td>";
+		echo "<td width=75>".$c->getZip()."</td>";
+		echo "<td width=75>".$c->getIncome()."</td>";
+		echo "<td width=75>".$c->getPhoneNum()."</td>";
+		echo "<td width=75>".$c->getType_()."</td>";
+		echo "<td width=75>".$c->getHairColor()."</td>";
+		echo "<td width=75>".$c->getEyeColor()."</td>";
+		echo "<td width=75>".$c->getHeight()."</td>";
+		echo "<td width=75>".$c->getCatOrDog()."</td>";
+		echo "<td width=75>".$c->getReligious()."</td>";
+		echo "<td width=75>".$c->getCook()."</td>";
+		echo "<td width=75>".$c->getBeachOrSki()."</td>";
+		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
+		echo "<td width=75>".$c->getGenre()."</td>";
+		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
+		echo "<td width=75>".$c->getAboutYourself()."</td>";
+		echo "<td width=75>".$c->getHoroscope()."</td>";
+		echo "<td width=75>".$c->getLookingFor()."</td>";
+		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
+		echo "<td width=75>".$c->getShoeSize()."</td>";
+		echo "<td width=75>".$c->getScore()."</td>";
+		echo "</tr>";
+	}
 }
 
+echo "<br/>";
+
+usort($SugarDaddyArray, 'sort_objects');
+
+foreach ($SugarDaddyArray as $c){
+	if($c->getScore() != 0){
+		echo "<tr>";
+		echo "<td width=75>".$c->getName()."</td>";
+		echo "<td width=75>".$c->getAge()."</td>";
+		echo "<td width=75>".$c->getEmail()."</td>";
+		echo "<td width=75>".$c->getZip()."</td>";
+		echo "<td width=75>".$c->getIncome()."</td>";
+		echo "<td width=75>".$c->getPhoneNum()."</td>";
+		echo "<td width=75>".$c->getType_()."</td>";
+		echo "<td width=75>".$c->getHairColor()."</td>";
+		echo "<td width=75>".$c->getEyeColor()."</td>";
+		echo "<td width=75>".$c->getHeight()."</td>";
+		echo "<td width=75>".$c->getCatOrDog()."</td>";
+		echo "<td width=75>".$c->getReligious()."</td>";
+		echo "<td width=75>".$c->getCook()."</td>";
+		echo "<td width=75>".$c->getBeachOrSki()."</td>";
+		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
+		echo "<td width=75>".$c->getGenre()."</td>";
+		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
+		echo "<td width=75>".$c->getAboutYourself()."</td>";
+		echo "<td width=75>".$c->getHoroscope()."</td>";
+		echo "<td width=75>".$c->getLookingFor()."</td>";
+		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
+		echo "<td width=75>".$c->getShoeSize()."</td>";
+		echo "<td width=75>".$c->getScore()."</td>";
+		echo "</tr>";
+	}
+}
+
+echo "<br/>";
+
+usort($CougarArray, 'sort_objects');
+
+foreach ($CougarArray as $c){
+	if($c->getScore() != 0){
+		echo "<tr>";
+		echo "<td width=75>".$c->getName()."</td>";
+		echo "<td width=75>".$c->getAge()."</td>";
+		echo "<td width=75>".$c->getEmail()."</td>";
+		echo "<td width=75>".$c->getZip()."</td>";
+		echo "<td width=75>".$c->getIncome()."</td>";
+		echo "<td width=75>".$c->getPhoneNum()."</td>";
+		echo "<td width=75>".$c->getType_()."</td>";
+		echo "<td width=75>".$c->getHairColor()."</td>";
+		echo "<td width=75>".$c->getEyeColor()."</td>";
+		echo "<td width=75>".$c->getHeight()."</td>";
+		echo "<td width=75>".$c->getCatOrDog()."</td>";
+		echo "<td width=75>".$c->getReligious()."</td>";
+		echo "<td width=75>".$c->getCook()."</td>";
+		echo "<td width=75>".$c->getBeachOrSki()."</td>";
+		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
+		echo "<td width=75>".$c->getGenre()."</td>";
+		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
+		echo "<td width=75>".$c->getAboutYourself()."</td>";
+		echo "<td width=75>".$c->getHoroscope()."</td>";
+		echo "<td width=75>".$c->getLookingFor()."</td>";
+		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
+		echo "<td width=75>".$c->getShoeSize()."</td>";
+		echo "<td width=75>".$c->getScore()."</td>";
+		echo "</tr>";
+	}
+}
+echo "</table>";
 //sorting results
 /*if($ss_curr_user->getType_() == "SugarDaddy"){
 	$ss_curr_user->sortArray(&$GoldDiggerFemaleArray);	
@@ -927,5 +1061,25 @@ body {
 }
 img {
 	border-radius: 50%;
+}
+
+table {  
+    color: #333; /* Lighten up font color */
+    font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+    width: 100%; 
+    border-collapse: 
+    collapse; border-spacing: 0; 
+}
+
+td, th { border: 1px solid #CCC; height: 30px; } /* Make cells a bit taller */
+
+th {  
+    background: #F3F3F3; /* Light grey background */
+    font-weight: bold; /* Make sure they're bold */
+}
+
+td {  
+    background: #FAFAFA; /* Lighter grey background */
+    text-align: center; /* Center our text */
 }
 </style>
