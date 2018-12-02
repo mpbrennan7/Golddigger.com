@@ -4,7 +4,7 @@ require('class_structure.php');
 //include PATH_TO_CLASS . 'class-Structure.php'
 session_start();
 $ss_curr_user = $_SESSION['curr_user'];
-
+$index = $_SESSION['index'];
 /*
 echo $ss_curr_user->getName();
 echo "<br/>";
@@ -767,32 +767,6 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 	}	
 }
 
-echo "<table border=1>";
-echo "<tr>";
-echo "<td width=75>Name</td>";
-echo "<td width=75>Age</td>";
-echo "<td width=75>Email</td>";
-echo "<td width=75>Zip</td>";
-echo "<td width=75>Income</td>";
-echo "<td width=75>Phone Num</td>";
-echo "<td width=75>Type</td>";
-echo "<td width=75>Hair Color</td>";
-echo "<td width=75>Eye Color</td>";
-echo "<td width=75>Height</td>";
-echo "<td width=75>Cat or Dog</td>";
-echo "<td width=75>Religious</td>";
-echo "<td width=75>Cook</td>";
-echo "<td width=75>Beach or Ski</td>";
-echo "<td width=75>Introvert or Extrovert</td>";
-echo "<td width=75>Genre</td>";
-echo "<td width=75>Relationship Status</td>";
-echo "<td width=75>About Yourself</td>";
-echo "<td width=75>Horoscope</td>";
-echo "<td width=75>Looking For</td>";
-echo "<td width=75>Favorite Cereal</td>";
-echo "<td width=75>Shoe Size</td>";
-echo "<td width=75>Score</td>";
-echo "</tr>";
 
 
 function sort_objects($a, $b) {
@@ -801,141 +775,85 @@ function sort_objects($a, $b) {
 }
 
 usort($GoldDiggerFemaleArray, 'sort_objects');
-
-
+  
+echo "<div class=row>";
+  
+$maxindex = $index + 3;
+$_SESSION['index'] = $maxindex;
 
 foreach ($GoldDiggerFemaleArray as $c){
 	if($c->getScore() != 0){
-		echo "<tr>";
-		echo "<td width=75>".$c->getName()."</td>";
-		echo "<td width=75>".$c->getAge()."</td>";
-		echo "<td width=75>".$c->getEmail()."</td>";
-		echo "<td width=75>".$c->getZip()."</td>";
-		echo "<td width=75>".$c->getIncome()."</td>";
-		echo "<td width=75>".$c->getPhoneNum()."</td>";
-		echo "<td width=75>".$c->getType_()."</td>";
-		echo "<td width=75>".$c->getHairColor()."</td>";
-		echo "<td width=75>".$c->getEyeColor()."</td>";
-		echo "<td width=75>".$c->getHeight()."</td>";
-		echo "<td width=75>".$c->getCatOrDog()."</td>";
-		echo "<td width=75>".$c->getReligious()."</td>";
-		echo "<td width=75>".$c->getCook()."</td>";
-		echo "<td width=75>".$c->getBeachOrSki()."</td>";
-		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
-		echo "<td width=75>".$c->getGenre()."</td>";
-		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
-		echo "<td width=75>".$c->getAboutYourself()."</td>";
-		echo "<td width=75>".$c->getHoroscope()."</td>";
-		echo "<td width=75>".$c->getLookingFor()."</td>";
-		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
-		echo "<td width=75>".$c->getShoeSize()."</td>";
-		echo "<td width=75>".$c->getScore()."</td>";
-		echo "</tr>";
+		echo "<div class=column>";
+		echo "<textarea>Name: ".$c->getName()."</textarea>";
+		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
+		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
+		echo "<textarea>Score: ".$c->getScore()."</textarea>";
+		echo "</div>";
 	}	
 }
-
-echo "<br/>";
 
 usort($GoldDiggerMaleArray, 'sort_objects');
 
 foreach ($GoldDiggerMaleArray as $c){
 	if($c->getScore() != 0){
-		echo "<tr>";
-		echo "<td width=75>".$c->getName()."</td>";
-		echo "<td width=75>".$c->getAge()."</td>";
-		echo "<td width=75>".$c->getEmail()."</td>";
-		echo "<td width=75>".$c->getZip()."</td>";
-		echo "<td width=75>".$c->getIncome()."</td>";
-		echo "<td width=75>".$c->getPhoneNum()."</td>";
-		echo "<td width=75>".$c->getType_()."</td>";
-		echo "<td width=75>".$c->getHairColor()."</td>";
-		echo "<td width=75>".$c->getEyeColor()."</td>";
-		echo "<td width=75>".$c->getHeight()."</td>";
-		echo "<td width=75>".$c->getCatOrDog()."</td>";
-		echo "<td width=75>".$c->getReligious()."</td>";
-		echo "<td width=75>".$c->getCook()."</td>";
-		echo "<td width=75>".$c->getBeachOrSki()."</td>";
-		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
-		echo "<td width=75>".$c->getGenre()."</td>";
-		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
-		echo "<td width=75>".$c->getAboutYourself()."</td>";
-		echo "<td width=75>".$c->getHoroscope()."</td>";
-		echo "<td width=75>".$c->getLookingFor()."</td>";
-		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
-		echo "<td width=75>".$c->getShoeSize()."</td>";
-		echo "<td width=75>".$c->getScore()."</td>";
-		echo "</tr>";
+		
+		echo "<div class=column>";		
+		echo "<textarea>Name: ".$c->getName()."</textarea>";
+		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
+		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
+		echo "<textarea>Score: ".$c->getScore()."</textarea>";
+		echo "</div>";
 	}
 }
-
-echo "<br/>";
 
 usort($SugarDaddyArray, 'sort_objects');
 
 foreach ($SugarDaddyArray as $c){
 	if($c->getScore() != 0){
-		echo "<tr>";
-		echo "<td width=75>".$c->getName()."</td>";
-		echo "<td width=75>".$c->getAge()."</td>";
-		echo "<td width=75>".$c->getEmail()."</td>";
-		echo "<td width=75>".$c->getZip()."</td>";
-		echo "<td width=75>".$c->getIncome()."</td>";
-		echo "<td width=75>".$c->getPhoneNum()."</td>";
-		echo "<td width=75>".$c->getType_()."</td>";
-		echo "<td width=75>".$c->getHairColor()."</td>";
-		echo "<td width=75>".$c->getEyeColor()."</td>";
-		echo "<td width=75>".$c->getHeight()."</td>";
-		echo "<td width=75>".$c->getCatOrDog()."</td>";
-		echo "<td width=75>".$c->getReligious()."</td>";
-		echo "<td width=75>".$c->getCook()."</td>";
-		echo "<td width=75>".$c->getBeachOrSki()."</td>";
-		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
-		echo "<td width=75>".$c->getGenre()."</td>";
-		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
-		echo "<td width=75>".$c->getAboutYourself()."</td>";
-		echo "<td width=75>".$c->getHoroscope()."</td>";
-		echo "<td width=75>".$c->getLookingFor()."</td>";
-		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
-		echo "<td width=75>".$c->getShoeSize()."</td>";
-		echo "<td width=75>".$c->getScore()."</td>";
-		echo "</tr>";
+		
+		echo "<div class=column>";		
+		echo "<textarea>Name: ".$c->getName()."</textarea>";
+		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
+		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
+		echo "<textarea>Score: ".$c->getScore()."</textarea>";
+		echo "</div>";
+
 	}
 }
-
-echo "<br/>";
 
 usort($CougarArray, 'sort_objects');
 
+$pindex = 0;
+
 foreach ($CougarArray as $c){
-	if($c->getScore() != 0){
-		echo "<tr>";
-		echo "<td width=75>".$c->getName()."</td>";
-		echo "<td width=75>".$c->getAge()."</td>";
-		echo "<td width=75>".$c->getEmail()."</td>";
-		echo "<td width=75>".$c->getZip()."</td>";
-		echo "<td width=75>".$c->getIncome()."</td>";
-		echo "<td width=75>".$c->getPhoneNum()."</td>";
-		echo "<td width=75>".$c->getType_()."</td>";
-		echo "<td width=75>".$c->getHairColor()."</td>";
-		echo "<td width=75>".$c->getEyeColor()."</td>";
-		echo "<td width=75>".$c->getHeight()."</td>";
-		echo "<td width=75>".$c->getCatOrDog()."</td>";
-		echo "<td width=75>".$c->getReligious()."</td>";
-		echo "<td width=75>".$c->getCook()."</td>";
-		echo "<td width=75>".$c->getBeachOrSki()."</td>";
-		echo "<td width=75>".$c->getIntrovertOrExtrovert()."</td>";
-		echo "<td width=75>".$c->getGenre()."</td>";
-		echo "<td width=75>".$c->getRelationshipStatus()."</td>";
-		echo "<td width=75>".$c->getAboutYourself()."</td>";
-		echo "<td width=75>".$c->getHoroscope()."</td>";
-		echo "<td width=75>".$c->getLookingFor()."</td>";
-		echo "<td width=75>".$c->getFavoriteCereal()."</td>";
-		echo "<td width=75>".$c->getShoeSize()."</td>";
-		echo "<td width=75>".$c->getScore()."</td>";
-		echo "</tr>";
+	//echo $index;
+	//echo "   ";
+	//echo $maxindex;
+	//echo "   ";
+	if($c->getScore() != 0 && $index < $maxindex && $pindex == $index){
+		
+		echo "<div class=column>";
+		
+		echo "<textarea>Name: ".$c->getName()."</textarea>";
+
+		echo "<textarea>Email: ".$c->getEmail()."</textarea>";
+
+		echo "<textarea>Description: ".$c->getAboutYourself()."</textarea>";
+
+		echo "<textarea>Score: ".$c->getScore()."</textarea>";
+		
+		echo "</div>";
+
+		$index += 1;
 	}
+	
+	$pindex += 1;
 }
-echo "</table>";
+
+echo "</div>";
+
+echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enough";
+//echo "</table>";
 
 /*
 	echo "<div class=\"header\">Recommended Connections: </div>
@@ -1030,18 +948,6 @@ echo "</table>";
 	font-size: 18px;
 }
 
-button {
-	border: none;
-	outline: 0;
-	display: inline-block;
-	padding: 8px;
-	color: white;
-	background-color: #000;
-	text-align: center;
-	cursor: pointer;
-	width: 100%;
-	font-size: 18px;
-}
 
 a {
 	text-decoration: none;
@@ -1049,9 +955,7 @@ a {
 	color: black;
 }
 
-button:hover, a:hover {
-	opacity: 0.7;
-}
+
 .row::after {
   content: "";
   clear: both;
@@ -1073,7 +977,7 @@ img {
 	border-radius: 50%;
 }
 
-table {  
+table, textarea {  
     color: #333; /* Lighten up font color */
     font-family: Helvetica, Arial, sans-serif; /* Nicer font */
     width: 100%; 
@@ -1091,5 +995,17 @@ th {
 td {  
     background: #FAFAFA; /* Lighter grey background */
     text-align: center; /* Center our text */
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 </style>

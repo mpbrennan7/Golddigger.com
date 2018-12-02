@@ -94,6 +94,7 @@
 		
 		session_start();//begin a PHP session_cache_expire
 		$_SESSION['curr_user'] = $curr_user;
+		$_SESSION['index'] = 0;
 
 		header('Location: results.php');
 		//echo "<script> location.href='orderform.html'; </script>";
