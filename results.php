@@ -178,7 +178,7 @@ foreach($GoldDiggerMaleArray as $gdm){
 }
 */
 
-$apikey = "se4wSwtmJV8JCvLWIhLPvKjUlgdRDhifDdwHOJKuu7JQ0MZkPzIZlNkFN4x19IUM";
+$apikey = "iF3M7s7kbXdGF2v3LGq6DpJ97fKXWlSKBdUtIzEs0333Ph1NY3AS6EKEcADCNqMq";
 $zip1 = $ss_curr_user->getZip();
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
@@ -761,7 +761,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 			$coug->setScore($coug->getScore()+50);
 		}
 		//Assign points based on shoe size 
-		if($coug-getShoeSize() < 10){
+		if($coug->getShoeSize() < 10){
 			$coug->setScore($coug->getScore()+50);
 		}
 	}	
