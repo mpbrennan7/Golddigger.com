@@ -9,55 +9,9 @@
 require('class_structure.php');
 //include PATH_TO_CLASS . 'class-Structure.php'
 session_start();
+//Assigns the variable current user in the database to the current user 
 $ss_curr_user = $_SESSION['curr_user'];
 $index = $_SESSION['index'];
-/*
-echo $ss_curr_user->getName();
-echo "<br/>";
-echo $ss_curr_user->getPword();
-echo "<br/>";
-echo $ss_curr_user->getAge();
-echo "<br/>";
-echo $ss_curr_user->getEmail();
-echo "<br/>";
-echo $ss_curr_user->getZip();
-echo "<br/>";
-echo $ss_curr_user->getIncome();
-echo "<br/>";
-echo $ss_curr_user->getPhoneNum();
-echo "<br/>";
-echo $ss_curr_user->getType_();
-echo "<br/>";
-echo $ss_curr_user->getHairColor();
-echo "<br/>";
-echo $ss_curr_user->getEyeColor();
-echo "<br/>";
-echo $ss_curr_user->getHeight();
-echo "<br/>";
-echo $ss_curr_user->getCatOrDog();
-echo "<br/>";
-echo $ss_curr_user->getReligious();
-echo "<br/>";
-echo $ss_curr_user->getCook();
-echo "<br/>";
-echo $ss_curr_user->getBeachOrSki();
-echo "<br/>";
-echo $ss_curr_user->getIntrovertOrExtrovert();
-echo "<br/>";
-echo $ss_curr_user->getGenre();
-echo "<br/>";
-echo $ss_curr_user->getRelationshipStatus();
-echo "<br/>";
-echo $ss_curr_user->getAboutYourself();
-echo "<br/>";
-echo $ss_curr_user->getHoroscope();
-echo "<br/>";
-echo $ss_curr_user->getLookingFor();
-echo "<br/>";
-echo $ss_curr_user->getFavoriteCereal();
-echo "<br/>";
-echo $ss_curr_user->getShoeSize();
-*/
 
 #need some sort of session data/current account data
 
@@ -67,13 +21,14 @@ echo $ss_curr_user->getShoeSize();
 	$dbname = "golddigger";
 	$port = 3306;
 
-
+//Connects to database
 $con=mysqli_connect($server,$username,$password,$dbname,$port);
-// Check connection
+// Check connection to database
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
+ //Gets all users
 $sql="SELECT * FROM Users";
 
 
@@ -150,6 +105,7 @@ if($result ->num_rows >0){
 		$shoeSize=$row['shoeSize'];
 		//Create object
 		$user;
+		//Add objects to arrays 
 		if ($type == "SugarDaddy") {
 			$SugarDaddyArray[$i] = new SugarDaddy($name,$pword,$age,$email,$zip,$income,$phoneNum,$type,$hairColor,$eyeColor,$height,$catOrDog,$religious,$cook,$beachOrSki,
 						$introvertOrExtrovert,$genre,$relationshipStatus,$aboutYourself,$horoscope,$lookingFor,$favoriteCereal,$shoeSize);
@@ -176,15 +132,9 @@ if($result ->num_rows >0){
 	}
 	
 }
-/*foreach($SugarDaddyArray as $daddy){
-	echo $daddy -> getName();
-}	
-foreach($GoldDiggerMaleArray as $gdm){
-	echo $gdm -> getName();
-}
-*/
-
+//The API key 
 $apikey = "iJobGkfpSJtHk619aLtmy5oiQQIVYOs1iI3OZ3dRzlvWZN1hgC5EjExXRnkSHvs8";
+//Gets the zipcode of the current user 
 $zip1 = $ss_curr_user->getZip();
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
@@ -483,6 +433,7 @@ else if($ss_curr_user->getType_() == "Cougar"){
 	}
 	
 }
+//If the user is a Gold digger female 
 else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 	foreach($SugarDaddyArray as $daddy) {
 		$zip2 = $daddy->getZip();
@@ -626,6 +577,7 @@ else if($ss_curr_user->getType_() == "GoldDiggerFemale"){
 		}
 	}
 }
+//If the user is a Gold digger male 
 else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 	foreach($CougarArray as $coug) {
 		$zip2 = $coug->getZip();
@@ -774,16 +726,12 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 }
 
 
-
-function sort_objects($a, $b) {
-	if($a->getScore() == $b->getScore()){ return 0 ; }
-	return ($a->getScore() > $b->getScore()) ? -1 : 1;
-}
-
+//sorting function 
 usort($GoldDiggerFemaleArray, 'sort_objects');
   
 echo "<div class=row>";
-  
+ 
+ 
 $maxindex = $index + 3;
 $_SESSION['index'] = $maxindex;
 $gdfindex = 0;
@@ -791,7 +739,7 @@ $gdmindex = 0;
 $sdindex = 0;
 $cindex = 0;
 
-
+//
 foreach ($GoldDiggerFemaleArray as $c){
 	if($c->getScore() != 0 && $index < $maxindex && $gdfindex == $index){
 		echo "<div class=column>";
@@ -863,40 +811,7 @@ echo "</div>";
 echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enough</button>";
 echo "<form action = \"logout.php\" method = \"POST\">";
 echo "<input type=\"submit\" value=\"Logout\"/>";
-//echo "</table>";
 
-/*
-	echo "<div class=\"header\">Recommended Connections: </div>
-		<div class=\"row\">
-			<div class=\"column\">
-				<div class=\"card\">
-				  <img src=\"img/images1.jpeg\" alt=\"John\" style=\"width:100%\">
-				  <h1>$fname1 $lname1</h1>
-				  <p class=\"title\">$top1score</p>
-				  <p>$location1</p>
-				  <p><button onclick=alert(\"$top1email\")>Contact</button></p>
-				</div>
-			</div>
-			<div class=\"column\">
-				<div class=\"card\">
-				  <img src=\"img/images2.jpeg\" alt=\"John\" style=\"width:100%\">
-				  <h1>$fname2 $lname2</h1>
-				  <p class=\"title\">$top2score</p>
-				  <p>$location2</p>
-				  <p><button onclick=alert(\"$top2email\")>Contact</button></p>
-				</div>
-			</div>
-			<div class=\"column\">
-				<div class=\"card\">
-				  <img src=\"img/images3.jpeg\" alt=\"John\" style=\"width:100%\">
-				  <h1>$fname3 $lname3</h1>
-				  <p class=\"title\">$top3score</p>
-				  <p>$location3</p>
-				  <p><button onclick=alert(\"$top3email\")>Contact</button></p>
-				</div>
-			</div>
-		</div>";
-		*/
 	mysqli_close($con);
 ?>
 
@@ -905,36 +820,6 @@ echo "<input type=\"submit\" value=\"Logout\"/>";
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
-<!--<div class="header">Results for <?php echo "'$username'" ?> </div>
-		<div class="row">
-			<div class="column">
-				<div class="card">
-				  <img src="img/family1.jpg" alt="John" style="width:100%">
-				  <h1>"<?php echo $fname1.$lname1; ?>"</h1>
-				  <p class="title"><?php echo "'$top1score'"; ?></p>
-				  <p><?php echo "'$location1'"; ?></p>
-				  <p><button>Contact</button></p>
-				</div>
-			</div>
-			<div class="column">
-				<div class="card">
-				  <img src="img/images1.jpg" alt="John" style="width:100%">
-				  <h1><?php echo "$fname2 $lname2"; ?></h1>
-				  <p class="title"><?php echo "'$top2score'"; ?></p>
-				  <p><?php echo "'$location2'" ?></p>
-				  <p><button>Contact</button></p>
-				</div>
-			</div>
-			<div class="column">
-				<div class="card">
-				  <img src="img/darthvadar.jpg" alt="John" style="width:100%">
-				  <h1><?php echo "'$fname3'.'$lname3'" ?></h1>
-				  <p class="title"><?php echo $top3score ?></p>
-				  <p><?php echo $location3 ?></p>
-				  <p><button>Contact</button></p>
-				</div>
-			</div>
-		</div>-->
 
 </html>
 
