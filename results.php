@@ -184,7 +184,7 @@ foreach($GoldDiggerMaleArray as $gdm){
 }
 */
 
-$apikey = "D9bpgm7qTMbZ8gl0ygKJcoBEwsYiAXcrE8LDzRs1I5Nu4gQmdBYllfu9LRGn6lfM";
+$apikey = "iJobGkfpSJtHk619aLtmy5oiQQIVYOs1iI3OZ3dRzlvWZN1hgC5EjExXRnkSHvs8";
 $zip1 = $ss_curr_user->getZip();
 
 if($ss_curr_user->getType_() == "SugarDaddy"){
@@ -860,7 +860,7 @@ foreach ($CougarArray as $c){
 
 echo "</div>";
 
-echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enough";
+echo "<button value=Refresh Page onClick=window.location.reload()>Not Good Enough</button>";
 echo "<form action = \"logout.php\" method = \"POST\">";
 echo "<input type=\"submit\" value=\"Logout\"/>";
 //echo "</table>";
