@@ -725,9 +725,15 @@ else if($ss_curr_user->getType_() == "GoldDiggerMale"){
 	}	
 }
 
+function sort_objects($a, $b) {
+	if($a->getScore() == $b->getScore()){ return 0 ; }
+	return ($a->getScore() > $b->getScore()) ? -1 : 1;
+}
 
 //sorting function 
 usort($GoldDiggerFemaleArray, 'sort_objects');
+
+
   
 echo "<div class=row>";
  
